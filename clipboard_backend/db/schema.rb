@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 2021_04_22_011143) do
 
   create_table "days", force: :cascade do |t|
-    t.datetime "date"
+    t.date "date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

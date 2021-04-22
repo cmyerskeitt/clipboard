@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 
   namespace :api do
-    namespece :v1 do
+    namespace :v1 do
       resources :lessons
       resources :days
+    end 
+  end 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
