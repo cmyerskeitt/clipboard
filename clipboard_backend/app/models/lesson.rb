@@ -1,4 +1,4 @@
 class Lesson < ApplicationRecord
-    # belongs_to :day
+    belongs_to :day
 
 end
