@@ -4618,3 +4618,58 @@ Processing by Api::V1::DaysController#index as */*
 Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.5ms | Allocations: 2810)
 
 
+Started GET "/api/v1/days" for ::1 at 2021-04-22 21:33:11 -0400
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::DaysController#index as */*
+  [1m[36mDay Load (0.8ms)[0m  [1m[34mSELECT "days".* FROM "days"[0m
+  ↳ app/controllers/api/v1/days_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mLesson Load (1.3ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."day_id" = ?[0m  [["day_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/days_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (40.39ms)
+Completed 200 OK in 90ms (Views: 75.5ms | ActiveRecord: 3.8ms | Allocations: 18903)
+
+
+Started GET "/api/v1/days" for ::1 at 2021-04-22 21:33:19 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::DaysController#index as */*
+  [1m[36mDay Load (0.8ms)[0m  [1m[34mSELECT "days".* FROM "days"[0m
+  ↳ app/controllers/api/v1/days_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mLesson Load (0.3ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."day_id" = ?[0m  [["day_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/days_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (93.46ms)
+Completed 200 OK in 120ms (Views: 111.0ms | ActiveRecord: 3.9ms | Allocations: 13903)
+
+
+Started GET "/api/v1/days" for ::1 at 2021-04-22 21:33:46 -0400
+Processing by Api::V1::DaysController#index as */*
+  [1m[36mDay Load (0.2ms)[0m  [1m[34mSELECT "days".* FROM "days"[0m
+  ↳ app/controllers/api/v1/days_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mLesson Load (0.2ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."day_id" = ?[0m  [["day_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/days_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (5.17ms)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.4ms | Allocations: 2831)
+
+
+Started GET "/api/v1/days" for ::1 at 2021-04-22 21:33:55 -0400
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::DaysController#index as */*
+  [1m[36mDay Load (0.3ms)[0m  [1m[34mSELECT "days".* FROM "days"[0m
+  ↳ app/controllers/api/v1/days_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mLesson Load (0.2ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."day_id" = ?[0m  [["day_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/days_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (53.78ms)
+Completed 200 OK in 163ms (Views: 140.1ms | ActiveRecord: 4.0ms | Allocations: 18862)
+
+
+Started GET "/api/v1/days" for ::1 at 2021-04-22 21:34:51 -0400
+Processing by Api::V1::DaysController#index as */*
+  [1m[36mDay Load (0.3ms)[0m  [1m[34mSELECT "days".* FROM "days"[0m
+  ↳ app/controllers/api/v1/days_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mLesson Load (0.3ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."day_id" = ?[0m  [["day_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/days_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (8.04ms)
+Completed 200 OK in 13ms (Views: 12.1ms | ActiveRecord: 0.6ms | Allocations: 2831)
+
+
