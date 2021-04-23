@@ -41,6 +41,6 @@ class Api::V1::LessonsController < ApplicationController
     end 
 
     def lesson_params
-        params.require(:lesson).permit(:title, :subject, :objective, :summary, :lesson_url, :day_id)
+        params.require(:lesson).permit(:title, :startTime, :endTime, :subject, :objective, :summary, :lesson_url, :day_id)
     end 
 end
