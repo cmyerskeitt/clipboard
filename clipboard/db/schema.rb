@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 2021_04_22_235925) do
 
   create_table "lessons", force: :cascade do |t|
     t.string "title"
+    t.datetime "startTime"
+    t.datetime "endTime"
     t.string "subject"
     t.text "objective"
     t.text "summary"

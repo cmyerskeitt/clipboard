@@ -4943,3 +4943,138 @@ Processing by Api::V1::DaysController#index as */*
 Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.4ms | Allocations: 2812)
 
 
+Started GET "/api/v1/days" for ::1 at 2021-04-23 11:33:42 -0400
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::DaysController#index as */*
+  [1m[36mDay Load (0.9ms)[0m  [1m[34mSELECT "days".* FROM "days"[0m
+  ↳ app/controllers/api/v1/days_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mLesson Load (1.3ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."day_id" = ?[0m  [["day_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/days_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (32.8ms)
+Completed 200 OK in 78ms (Views: 67.9ms | ActiveRecord: 3.9ms | Allocations: 18860)
+
+
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddDaysToLessons (20210422235925)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "alessons" ("id" integer NOT NULL PRIMARY KEY, "title" varchar DEFAULT NULL, "subject" varchar DEFAULT NULL, "objective" text DEFAULT NULL, "summary" text DEFAULT NULL, "lesson_url" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "day_id" integer NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_alessons_on_day_id" ON "alessons" ("day_id")[0m
+  [1m[35m (0.8ms)[0m  [1m[32mINSERT INTO "alessons" ("id","title","subject","objective","summary","lesson_url","created_at","updated_at","day_id")
+                     SELECT "id","title","subject","objective","summary","lesson_url","created_at","updated_at","day_id" FROM "lessons"[0m
+  [1m[35m (1.9ms)[0m  [1m[35mDROP TABLE "lessons"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "lessons" ("id" integer NOT NULL PRIMARY KEY, "title" varchar DEFAULT NULL, "subject" varchar DEFAULT NULL, "objective" text DEFAULT NULL, "summary" text DEFAULT NULL, "lesson_url" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "day_id" integer NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_lessons_on_day_id" ON "lessons" ("day_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "lessons" ("id","title","subject","objective","summary","lesson_url","created_at","updated_at","day_id")
+                     SELECT "id","title","subject","objective","summary","lesson_url","created_at","updated_at","day_id" FROM "alessons"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "alessons"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "alessons" ("id" integer NOT NULL PRIMARY KEY, "title" varchar DEFAULT NULL, "subject" varchar DEFAULT NULL, "objective" text DEFAULT NULL, "summary" text DEFAULT NULL, "lesson_url" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "day_id" integer NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_alessons_on_day_id" ON "alessons" ("day_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "alessons" ("id","title","subject","objective","summary","lesson_url","created_at","updated_at","day_id")
+                     SELECT "id","title","subject","objective","summary","lesson_url","created_at","updated_at","day_id" FROM "lessons"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "lessons"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "lessons" ("id" integer NOT NULL PRIMARY KEY, "title" varchar DEFAULT NULL, "subject" varchar DEFAULT NULL, "objective" text DEFAULT NULL, "summary" text DEFAULT NULL, "lesson_url" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "lessons" ("id","title","subject","objective","summary","lesson_url","created_at","updated_at")
+                     SELECT "id","title","subject","objective","summary","lesson_url","created_at","updated_at" FROM "alessons"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "alessons"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mprimary::SchemaMigration Destroy (0.3ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20210422235925"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateLessons (20210422231216)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE "lessons"[0m
+  [1m[36mprimary::SchemaMigration Destroy (0.4ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20210422231216"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateLessons (20210422231216)
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateLessons (20210422231216)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "lessons" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "startTime" datetime, "endTime" datetime, "subject" varchar, "objective" text, "summary" text, "lesson_url" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210422231216"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddDaysToLessons (20210422235925)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.4ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TEMPORARY TABLE "alessons" ("id" integer NOT NULL PRIMARY KEY, "title" varchar DEFAULT NULL, "startTime" datetime DEFAULT NULL, "endTime" datetime DEFAULT NULL, "subject" varchar DEFAULT NULL, "objective" text DEFAULT NULL, "summary" text DEFAULT NULL, "lesson_url" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "alessons" ("id","title","startTime","endTime","subject","objective","summary","lesson_url","created_at","updated_at")
+                     SELECT "id","title","startTime","endTime","subject","objective","summary","lesson_url","created_at","updated_at" FROM "lessons"[0m
+  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE "lessons"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "lessons" ("id" integer NOT NULL PRIMARY KEY, "title" varchar DEFAULT NULL, "startTime" datetime DEFAULT NULL, "endTime" datetime DEFAULT NULL, "subject" varchar DEFAULT NULL, "objective" text DEFAULT NULL, "summary" text DEFAULT NULL, "lesson_url" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "day_id" integer NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "lessons" ("id","title","startTime","endTime","subject","objective","summary","lesson_url","created_at","updated_at")
+                     SELECT "id","title","startTime","endTime","subject","objective","summary","lesson_url","created_at","updated_at" FROM "alessons"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "alessons"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_lessons_on_day_id" ON "lessons" ("day_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "alessons" ("id" integer NOT NULL PRIMARY KEY, "title" varchar DEFAULT NULL, "startTime" datetime DEFAULT NULL, "endTime" datetime DEFAULT NULL, "subject" varchar DEFAULT NULL, "objective" text DEFAULT NULL, "summary" text DEFAULT NULL, "lesson_url" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "day_id" integer NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_alessons_on_day_id" ON "alessons" ("day_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "alessons" ("id","title","startTime","endTime","subject","objective","summary","lesson_url","created_at","updated_at","day_id")
+                     SELECT "id","title","startTime","endTime","subject","objective","summary","lesson_url","created_at","updated_at","day_id" FROM "lessons"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "lessons"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "lessons" ("id" integer NOT NULL PRIMARY KEY, "title" varchar DEFAULT NULL, "startTime" datetime DEFAULT NULL, "endTime" datetime DEFAULT NULL, "subject" varchar DEFAULT NULL, "objective" text DEFAULT NULL, "summary" text DEFAULT NULL, "lesson_url" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "day_id" integer NOT NULL, CONSTRAINT "fk_rails_d48047852f"
+FOREIGN KEY ("day_id")
+  REFERENCES "days" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_lessons_on_day_id" ON "lessons" ("day_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "lessons" ("id","title","startTime","endTime","subject","objective","summary","lesson_url","created_at","updated_at","day_id")
+                     SELECT "id","title","startTime","endTime","subject","objective","summary","lesson_url","created_at","updated_at","day_id" FROM "alessons"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "alessons"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210422235925"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDay Create (0.5ms)[0m  [1m[32mINSERT INTO "days" ("date", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["date", 20210419], ["created_at", "2021-04-23 16:29:54.526603"], ["updated_at", "2021-04-23 16:29:54.526603"]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDay Load (0.2ms)[0m  [1m[34mSELECT "days".* FROM "days" WHERE "days"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLesson Create (0.4ms)[0m  [1m[32mINSERT INTO "lessons" ("title", "startTime", "endTime", "subject", "objective", "summary", "lesson_url", "created_at", "updated_at", "day_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Intro to Poetry - Rhyming"], ["startTime", "2019-04-19 08:00:00"], ["endTime", "2019-04-19 10:00:00"], ["subject", "Reading"], ["objective", "Students will be able to develop skills in reading poetry by applying a variety of reading strategies, learn about the rhyming element of poetry, and identify rhyme in a poem."], ["summary", "Students will learn about rhyming and how authors utilize rhyming to draw attention to their poem. Students will learn to identify rhyming as when words have the same ending sound."], ["lesson_url", "https://docs.google.com/presentation/d/1qkX1du4iM29k9yVOAsSorewng9Hb54d5b_xuw-YdVhE/edit?usp=sharing"], ["created_at", "2021-04-23 16:29:54.570208"], ["updated_at", "2021-04-23 16:29:54.570208"], ["day_id", 1]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDay Load (0.1ms)[0m  [1m[34mSELECT "days".* FROM "days" WHERE "days"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLesson Create (0.3ms)[0m  [1m[32mINSERT INTO "lessons" ("title", "startTime", "endTime", "subject", "objective", "summary", "lesson_url", "created_at", "updated_at", "day_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Intro to Poetry - Alliteration"], ["startTime", "2019-04-19 12:00:00"], ["endTime", "2019-04-19 14:00:00"], ["subject", "Reading"], ["objective", "Students will be able to develop skills in reading poetry by applying a variety of reading strategies, learn about the alliteration element of poetry, and identify alliteration in a poem."], ["summary", "Students will learn about alliteration and how authors use it for emphasis or effect. Student will learn to identify alliteration as the use of the same beginning constant sound in a line or verse."], ["lesson_url", "https://docs.google.com/presentation/d/1qkX1du4iM29k9yVOAsSorewng9Hb54d5b_xuw-YdVhE/edit?usp=sharing"], ["created_at", "2021-04-23 16:29:54.576586"], ["updated_at", "2021-04-23 16:29:54.576586"], ["day_id", 1]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mLesson Load (0.4ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" LIMIT ?[0m  [["LIMIT", 11]]
