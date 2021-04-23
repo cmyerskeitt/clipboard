@@ -35,6 +35,7 @@ class  MyCalendar extends React.Component{
           events={this.state.lessons}
           startAccessor="start"
           endAccessor="end"
+          defaultView='week'
           style={{ height: "100vh" }}
         />
       </div>

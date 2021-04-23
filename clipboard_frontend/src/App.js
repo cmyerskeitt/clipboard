@@ -1,7 +1,7 @@
 import React from 'react';
 import MyCalendar from './containers/MyCalendar'
-// import react-big-calendar/lib/css/react-big-calendar.css
-
+import HeaderContainer from './header/HeaderContainer';
+import NewDateForm from './containers/NewDateForm'
 
 
 
@@ -16,9 +16,13 @@ class App extends React.Component {
   
     render (){
       return (
-      <div className="App">
-        <MyCalendar/>
-      </div>
+
+          <div className="App">
+            <HeaderContainer/>
+            <NewDateForm/>
+            <MyCalendar/>
+          </div>
+  
     )
   }
 }
