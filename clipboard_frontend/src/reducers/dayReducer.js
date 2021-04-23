@@ -1,3 +1,3 @@
-export default function dayReducer( state = {}, action){
-  
+export default function dayReducer(state = {days: []}, action){
+  return state
 }
