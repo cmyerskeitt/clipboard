@@ -7,7 +7,7 @@ import {Provider} from 'react-redux'
 import dayReducer from './reducers/dayReducer'
 import { composeWithDevTools } from 'redux-devtools-extension'
 
-// const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION__COMPOSE__ || compose;
+
 
 const store = createStore(dayReducer, composeWithDevTools(applyMiddleware(thunk)))
 
