@@ -1,5 +1,5 @@
 import React from 'react';
-import MyCalendar from './components/MyCalendar'
+import MyCalendar from './containers/MyCalendar'
 // import react-big-calendar/lib/css/react-big-calendar.css
 
 
