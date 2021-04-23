@@ -4,8 +4,8 @@ class Api::V1::LessonsController < ApplicationController
     before_action :set_day
     
     def index 
-        lessons = @day.lessons
-        render json: lessons
+            lessons = Lesson.all
+            render json: lessons
     end 
 
     def create 
