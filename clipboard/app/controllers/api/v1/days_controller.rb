@@ -14,13 +14,13 @@ class Api::V1::DaysController < ApplicationController
             redirect_to "api/v1/days/#{day.id}"
         else 
             day = Day.create(day_params) 
-            render json: day
+            render json: @day
         end 
     end 
 
     def show 
         day = Day.find(:id => params[:id].to_i)
-        render json: day
+        render json: @day
     end 
 
     

@@ -1,3 +1,4 @@
 class DaySerializer < ActiveModel::Serializer
-  attributes :id
+  has_many :lessons
+  attributes :id, :date
 end

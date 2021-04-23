@@ -1,3 +1,4 @@
 class LessonSerializer < ActiveModel::Serializer
-  attributes :id
+  belongs_to :day
+  attributes :title, :subject, :objective, :summary, :lesson_url, :day_id
 end
