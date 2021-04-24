@@ -10,7 +10,7 @@ class  MyCalendar extends React.Component{
     super()
     const now = new Date();
     const myLessonsList = [{
-      //test events/ where I will 
+      //test events/ call LessonList Component(C) => lesson(P) Compnent
       id: 14,
       title: 'Today',
       start: new Date(new Date().setHours(new Date().getHours() - 3)),
@@ -60,6 +60,7 @@ class  MyCalendar extends React.Component{
           selectable={true}
           localizer={localizer}
           events={this.state.lessons}
+          step={10}
           startAccessor="start"
           endAccessor="end"
           defaultDate={new Date()}
