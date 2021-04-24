@@ -6,14 +6,18 @@ class NewDateForm extends React.Component {
             date: ""
         }
     
-
+    
     handleOnChange = event => {
+        console.log(event.target.value)
         this.setState({
+            
             date: event.target.value 
+            
         })
        
     }
 
+    //reroute to day view and display event 
     handleOnSubmit = event => {
 
     }

@@ -10,7 +10,7 @@ class  MyCalendar extends React.Component{
     super()
     const now = new Date();
     const myLessonsList = [{
-      //test events
+      //test events/ where I will 
       id: 14,
       title: 'Today',
       start: new Date(new Date().setHours(new Date().getHours() - 3)),
@@ -26,8 +26,14 @@ class  MyCalendar extends React.Component{
       lessons: myLessonsList
     }
   }
+
+  //insert NewLessonForm?
   handleSelect = ({start, end}) => {
     const title = window.prompt(('New Lesson Title'))
+    var startDate = moment.start
+    var endDate = moment.end
+    console.log(startDate)
+    console.log(endDate)
     if (title)
     this.setState({
       lessons: [
@@ -42,6 +48,7 @@ class  MyCalendar extends React.Component{
     })
   }
 
+  // need reroute to day view and display information
   onLessonClick = (event) => {
     console.log(event)
   }
