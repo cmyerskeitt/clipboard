@@ -48,10 +48,13 @@ class  MyCalendar extends React.Component{
     })
   }
 
-  // need reroute to day view and display information
+  // need reroute to day view and display information-Lesson Component
   onLessonClick = (event) => {
     console.log(event)
+    window.alert(event.title)
   }
+
+  // }
 
   render(){
     return(
@@ -64,11 +67,12 @@ class  MyCalendar extends React.Component{
           startAccessor="start"
           endAccessor="end"
           defaultDate={new Date()}
-          views={['month','week','day']}
+          views={['week','day']}
           defaultView={Views.WEEK}
           onSelectEvent={this.onLessonClick}
           onSelectSlot={this.handleSelect}
           style={{ height: "100vh" }}
+      
         />
       </div>
       )

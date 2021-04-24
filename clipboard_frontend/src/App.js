@@ -1,7 +1,7 @@
 import React from 'react';
-import MyCalendar from './containers/MyCalendar'
+import MyCalendar from './calendar/MyCalendar'
 import HeaderContainer from './header/HeaderContainer';
-import NewDateForm from './containers/NewDateForm'
+import NewDateForm from './components/NewDateForm'
 
 
 

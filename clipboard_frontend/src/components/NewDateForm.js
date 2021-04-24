@@ -1,6 +1,5 @@
 import React from 'react' 
 
-
 class NewDateForm extends React.Component { 
     state = {
             date: ""
@@ -17,10 +16,12 @@ class NewDateForm extends React.Component {
        
     }
 
-    //reroute to day view and display event 
+    //reroute to day view and display event/Day Component
     handleOnSubmit = event => {
-
-    }
+        event.preventDefault()
+        //post request to db
+        // dispatch add day 
+    }  
 
     render() {
         return (
@@ -28,7 +29,7 @@ class NewDateForm extends React.Component {
                 <form onSubmit={this.handleOnSubmit}>
                     <label> Date: </label>
                     <input type="date" value={this.state.date} onChange={this.handleOnChange}/>
-                    <input type='submit' value='submit'/>
+                    <input type='submit' value='submit' onSubmit={this.handleOnSubmit}/>
                 </form>
             </div>
         )
