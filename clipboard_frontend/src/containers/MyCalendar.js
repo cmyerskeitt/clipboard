@@ -1,5 +1,5 @@
 import React from 'react'
-import {Calendar, momentLocalizer} from 'react-big-calendar'
+import {Calendar, Views, momentLocalizer} from 'react-big-calendar'
 import moment from 'moment'
 import "react-big-calendar/lib/css/react-big-calendar.css";
 
@@ -10,6 +10,7 @@ class  MyCalendar extends React.Component{
     super()
     const now = new Date();
     const myLessonsList = [{
+      //test events
       id: 14,
       title: 'Today',
       start: new Date(new Date().setHours(new Date().getHours() - 3)),
@@ -25,17 +26,36 @@ class  MyCalendar extends React.Component{
       lessons: myLessonsList
     }
   }
+  handleSelect = ({start, end}) => {
+    const title = window.prompt(('New Lesson Title'))
+    if (title)
+    this.setState({
+      lessons: [
+        ...this.state.lessons,
+        {
+          title,
+          start,
+          end,
 
+        }
+      ]
+    })
+  }
 
   render(){
     return(
       <div>
         <Calendar
+          selectable={true}
           localizer={localizer}
           events={this.state.lessons}
           startAccessor="start"
           endAccessor="end"
-          defaultView='week'
+          defaultDate={new Date()}
+          views={['month','week','day']}
+          defaultView={Views.WEEK}
+          onSelectEvent={event => alert(event.title)}
+          onSelectSlot={this.handleSelect}
           style={{ height: "100vh" }}
         />
       </div>

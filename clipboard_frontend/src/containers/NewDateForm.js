@@ -15,17 +15,15 @@ class NewDateForm extends React.Component {
     }
 
     handleOnSubmit = event => {
-        
+
     }
 
     render() {
         return (
             <div>
                 <form onSubmit={this.handleOnSubmit}>
-                    <p>
                     <label> Date: </label>
                     <input type="date" value={this.state.date} onChange={this.handleOnChange}/>
-                    </p>
                     <input type='submit' value='submit'/>
                 </form>
             </div>
