@@ -19,6 +19,10 @@ class NewDateForm extends React.Component {
     //reroute to day view and display event/Day Component
     handleOnSubmit = event => {
         event.preventDefault()
+        this.props.addDay(this.state.date)
+        this.setState({
+            date: ''
+        })
         //post request to db
         // dispatch add day 
     }  
