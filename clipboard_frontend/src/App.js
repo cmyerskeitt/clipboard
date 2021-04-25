@@ -1,7 +1,7 @@
 import React from 'react';
-import MyCalendar from './calendar/MyCalendar'
+import MyCalendar from './calendar/MyCalendarContainer'
 import HeaderContainer from './header/HeaderContainer';
-import NewDateForm from './components/NewDateForm'
+// import NewDateForm from './components/NewDayForm'
 
 
 
@@ -19,7 +19,6 @@ class App extends React.Component {
 
           <div className="App">
             <HeaderContainer/>
-            <NewDateForm/>
             <MyCalendar/>
           </div>
   
