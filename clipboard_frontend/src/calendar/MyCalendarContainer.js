@@ -2,8 +2,6 @@ import React from 'react'
 import {Calendar, Views, momentLocalizer} from 'react-big-calendar'
 import moment from 'moment'
 import "react-big-calendar/lib/css/react-big-calendar.css";
-import DaysContainer from '../containers/DaysContainer'
-
 
 const localizer = momentLocalizer(moment)
 
@@ -11,7 +9,6 @@ class  MyCalendar extends React.Component{
   constructor(){
     super()
     const now = new Date();
-    const myDaysList = {}
     const myLessonsList = [{
       //test events/ call LessonList Component(C) => lesson(P) Compnent
       id: 14,
@@ -26,14 +23,12 @@ class  MyCalendar extends React.Component{
       end: now,
   }]
     this.state = {
-      lessons: myLessonsList,
-      //defaultday for now
-      date: myDaysList
+      lessons: myLessonsList
     }
   }
 
   //insert NewLessonForm?addNewLessonAlert => AddNewLesson 
-  handleSelect = ({start, end}) => {
+  handleSelectedSlot = ({start, end}) => {
     const title = window.prompt(('New Lesson Title'))
     var startDate = moment.start
     var endDate = moment.end
@@ -63,7 +58,6 @@ class  MyCalendar extends React.Component{
   render(){
     return(
       <div>
-        <DaysContainer/>
         <Calendar
           selectable={true}
           localizer={localizer}
@@ -72,23 +66,21 @@ class  MyCalendar extends React.Component{
           startAccessor="start"
           endAccessor="end"
           defaultDate={new Date()}
-        
-           
-          date={this.state.day}
-          views={['week','day']}
+          views={['month','week','day']}
           defaultView={Views.WEEK}
-          //
           onSelectEvent={this.onLessonClick}
-         
-          onNavigate= {date => {
-            this.setState({ date: date })
+          onSelectSlot={this.handleSelectedSlot}
+          style={{ 
+            height: "100vh",
           }}
-          //handleSelect = addNewLessonAlert => AddNewLesson 
-          onSelectSlot={this.handleSelect}
-          style={{ height: "100vh" }}
           // components={{
-          //   event: <LessonContainer/>
+          //   event: LessonContainer
           // }}
+          // onNavigate= {date => {
+          //   this.setState({ day: date })
+          // }} 
+        
+           // date={this.state.day}
         />
       </div>
       )
