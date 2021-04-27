@@ -2,8 +2,10 @@ import React from 'react'
 import {Calendar, Views, momentLocalizer} from 'react-big-calendar'
 import moment from 'moment'
 import "react-big-calendar/lib/css/react-big-calendar.css";
+// import DaysContainer from '../containers/DaysContainer';
 
 const localizer = momentLocalizer(moment)
+
 
 class  MyCalendar extends React.Component{
   constructor(){
@@ -29,7 +31,8 @@ class  MyCalendar extends React.Component{
 
   //insert NewLessonForm?addNewLessonAlert => AddNewLesson 
   handleSelectedSlot = ({start, end}) => {
-    const title = window.prompt(('New Lesson Title'))
+    const title = console.log(('New Lesson Title'))
+    window.prompt(('New Lesson Title'))
     var startDate = moment.start
     var endDate = moment.end
     console.log(startDate)
@@ -73,14 +76,7 @@ class  MyCalendar extends React.Component{
           style={{ 
             height: "100vh",
           }}
-          // components={{
-          //   event: LessonContainer
-          // }}
-          // onNavigate= {date => {
-          //   this.setState({ day: date })
-          // }} 
-        
-           // date={this.state.day}
+    
         />
       </div>
       )

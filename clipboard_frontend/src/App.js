@@ -3,14 +3,14 @@ import MyCalendar from './calendar/MyCalendarContainer'
 import HeaderContainer from './header/HeaderContainer';
 import {connect} from 'react-redux'
 import {fetchDays} from './actions/fetchDays'
-// import DaysContainer from './containers/DaysContainer'
-// import NewDateForm from './components/NewDayForm'
+import DaysContainer from './containers/DaysContainer'
+
 
 
 
 class App extends React.Component {
 
-   //cdm-fetchday 
+ 
   componentDidMount(){
   this.props.fetchDays({type: 'FETCH_DAYS', payload: {days: ['20210430']}})
   //   fetch('http://localhost:3000/api/v1/days')
@@ -24,7 +24,7 @@ class App extends React.Component {
 
           <div className="App">
             <HeaderContainer/>
-            {/* <DaysContainer/> */}
+            <DaysContainer/>
             <MyCalendar/>
           </div>
   

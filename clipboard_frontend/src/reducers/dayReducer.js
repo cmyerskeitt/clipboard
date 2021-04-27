@@ -1,6 +1,11 @@
 export default function dayReducer(state = {days: []}, action){
   // debugger 
-  return action.payload
+  switch (action.type){
+    case 'FETCH_DAYS':
+        return {days: action.payload}
+    default:
+        return state
+  }
 }
 
 // export default function dayReducer(state = {days: [], lessons:[]}, action){
