@@ -4,7 +4,7 @@ const Lessons = (props) => {
     console.log(props)
     return (
         <div>
-            {/* {props.days.map(day => <li key={day.id}>{day.lessons.title}</li>)} */}
+            {props.lessons.map(lesson=> <li key={lesson.id}>{lesson.title}</li>)}
         </div>
         
     )

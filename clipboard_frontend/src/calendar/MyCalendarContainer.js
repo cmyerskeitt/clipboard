@@ -2,6 +2,7 @@ import React from 'react'
 import {Calendar, Views, momentLocalizer} from 'react-big-calendar'
 import moment from 'moment'
 import "react-big-calendar/lib/css/react-big-calendar.css";
+import {connect} from 'react-redux'
 
 
 
@@ -11,22 +12,22 @@ const localizer = momentLocalizer(moment)
 class  MyCalendar extends React.Component{
   constructor(){
     super()
-    const now = new Date();
-    const myLessonsList = [{
-      //test events/ call LessonList Component(C) => lesson(P) Compnent
-      id: 14,
-      title: 'Today',
-      start: new Date(new Date().setHours(new Date().getHours() - 3)),
-      end: new Date(new Date().setHours(new Date().getHours() + 3)),
-  },
-  {
-      id: 15,
-      title: 'Point in Time Event',
-      start: now,
-      end: now,
-  }]
+  //   const now = new Date();
+  //   const myLessonsList = [{
+  //     //test events/ call LessonList Component(C) => lesson(P) Compnent
+  //     id: 14,
+  //     title: 'Today',
+  //     start: new Date(new Date().setHours(new Date().getHours() - 3)),
+  //     end: new Date(new Date().setHours(new Date().getHours() + 3)),
+  // },
+  // {
+  //     id: 15,
+  //     title: 'Point in Time Event',
+  //     start: now,
+  //     end: now,
+  // }]
     this.state = {
-      lessons: myLessonsList
+      lessons: []
     }
   }
 
@@ -76,13 +77,18 @@ class  MyCalendar extends React.Component{
           style={{ 
             height: "100vh",
           }}
-          // components={{
-          //   events: DaysContainer
-          // }}
-    
+
         />
       </div>
       )
   }
 }
-export default MyCalendar
+
+const mapStateToProps = state => {
+  return ({
+    lessons: state.lessons
+  })
+}
+
+
+export default connect(mapStateToProps)(MyCalendar)
