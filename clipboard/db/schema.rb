@@ -14,8 +14,8 @@ ActiveRecord::Schema.define(version: 2021_04_22_231216) do
 
   create_table "lessons", force: :cascade do |t|
     t.string "title"
-    t.datetime "startTime"
-    t.datetime "endTime"
+    t.datetime "start"
+    t.datetime "end"
     t.string "subject"
     t.text "objective"
     t.text "summary"

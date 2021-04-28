@@ -9,6 +9,7 @@ class Api::V1::LessonsController < ApplicationController
     end 
 
     def create 
+        binding.pry
         lesson = Lesson.new(lesson_params)
         if lesson.save
             render json: lesson
@@ -41,6 +42,7 @@ class Api::V1::LessonsController < ApplicationController
     # end 
 
     def lesson_params
-        params.require(:lesson).permit(:title, :startTime, :endTime, :subject, :objective, :summary, :lesson_url, :day_id)
+        params.require(:lesson).permit(:title, :startTime, :endTime)
+            # , :subject, :objective, :summary, :lesson_url, :day_id)
     end 
 end
