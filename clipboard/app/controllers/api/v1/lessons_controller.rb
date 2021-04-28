@@ -1,7 +1,7 @@
 
 class Api::V1::LessonsController < ApplicationController
   
-    before_action :set_day
+    # before_action :set_day
     
     def index 
             lessons = Lesson.all
@@ -36,9 +36,9 @@ class Api::V1::LessonsController < ApplicationController
     
     private
 
-    def set_day 
-        @day = Day.find(params[:day_id])
-    end 
+    # def set_day 
+    #     @day = Day.find(params[:day_id])
+    # end 
 
     def lesson_params
         params.require(:lesson).permit(:title, :startTime, :endTime, :subject, :objective, :summary, :lesson_url, :day_id)
