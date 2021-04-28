@@ -12,20 +12,20 @@ class MyCalendar extends React.Component{
   constructor(props){
     super(props)
     this.state = {
-      lessons: []
+      lessons: this.props.lessons
     }
   }
 
   
   //insert NewLessonForm?addNewLessonAlert => AddNewLesson 
-  handleSelectedSlot = ({start, end}) => {
+  handleSelectedSlot = ({start, end}) => { 
     const title = window.prompt(('New Lesson Title'))
     // var startDate = moment.start
     // var endDate = moment.end
     // console.log(startDate)
     // console.log(endDate)
     if (title)
-    this.setState({
+      this.setState({
       lessons: [
         ...this.state.lessons,
         {
@@ -38,9 +38,15 @@ class MyCalendar extends React.Component{
     })
     console.log(this.state.lessons)
     this.props.createLesson(this.state.lessons)
+    // this.state.lessons.push(this.props.lessons)
+    // this.setState={
+    //   lessons: []
+    // }
+    debugger
   }
 
 
+  
 
 
   //display Lesson Component 
@@ -76,20 +82,20 @@ class MyCalendar extends React.Component{
 }
 
 
-const mapStateToProps = state => {
-    return {
-      lessons: state.lessons 
-    }
-}
+// const mapStateToProps = state => {
+//     return {
+//       lessons: state.lessons 
+//     }
+// }
 
 const mapDispatchToProps = (dispatch) => {
   return{
-      createLesson: () => dispatch(createLesson()),
+      createLesson: (lesson) => dispatch(createLesson(lesson)),
   }
 }
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(MyCalendar)
+export default connect(null, mapDispatchToProps)(MyCalendar)
 
     // const now = new Date();
   //   const myLessonsList = [{

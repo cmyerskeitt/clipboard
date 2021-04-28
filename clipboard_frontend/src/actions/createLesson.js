@@ -1,7 +1,7 @@
 export const createLesson = (lesson) => {
-    console.log("inside createLesson")
+    console.log({lesson})
     // return (dispatch) => {
-    //     debugger
+    //     // debugger
     //     fetch('http://localhost:3000/api/v1/lessons', {
     //         method: "POST",
     //         headers: {
@@ -15,5 +15,5 @@ export const createLesson = (lesson) => {
     //             dispatch({type: "CREATE_LESSON", lesson})
     //         })
     // }
-    return {type: "CREATE_LESSON"}
+    return {type: "CREATE_LESSON", lesson}
 }

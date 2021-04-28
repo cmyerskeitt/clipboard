@@ -10,6 +10,7 @@ class App extends React.Component {
  
   componentDidMount(){
   this.props.fetchLessons()
+  
   }
   
     render (){
@@ -25,16 +26,16 @@ class App extends React.Component {
   }
 }
 
-// const mapStateToProps = (state) => {
-//   return {
-//     lessons: state.lessons
-//   }
-// }
+const mapStateToProps = (state) => {
+  return {
+    lessons: state.lessons
+  }
+}
 
 const mapDispatchToProps = dispatch => ({
   fetchLessons: () => dispatch(fetchLessons()),
   // createLesson: () => dispatch(createLesson()),
 })
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
   
