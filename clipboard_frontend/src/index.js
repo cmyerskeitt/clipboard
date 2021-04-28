@@ -4,13 +4,13 @@ import App from './App';
 import {createStore, applyMiddleware} from 'redux'
 import thunk from 'redux-thunk'
 import {Provider} from 'react-redux'
-import dayReducer from './reducers/dayReducer'
+import lessonReducer from './reducers/lessonReducer'
 import { composeWithDevTools } from 'redux-devtools-extension'
 
 
 
 
-const store = createStore(dayReducer, composeWithDevTools(applyMiddleware(thunk)))
+const store = createStore(lessonReducer, composeWithDevTools(applyMiddleware(thunk)))
 
 ReactDOM.render(
   <Provider store={store}>

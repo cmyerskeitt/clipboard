@@ -1,11 +1,11 @@
-export function fetchDays(){
+export function fetchLessons(){
     // return action 
     return (dispatch) => {
     console.log("inside fetch")
-    fetch('http://localhost:3000/api/v1/days')
+    fetch('http://localhost:3000/api/v1/lessons')
     .then(response => response.json())
     .then(days => dispatch({
-        type: 'FETCH_DAYS',
+        type: 'FETCH_LESSONS',
         payload: days
     }))
     

@@ -2,8 +2,8 @@ import React from 'react';
 import MyCalendar from './calendar/MyCalendarContainer'
 import HeaderContainer from './header/HeaderContainer';
 import {connect} from 'react-redux'
-import {fetchDays} from './actions/fetchDays'
-import DaysContainer from './containers/DaysContainer'
+import {fetchLessons} from './actions/fetchLessons'
+import DaysContainer from './containers/LessonsContainer'
 
 
 
@@ -12,11 +12,7 @@ class App extends React.Component {
 
  
   componentDidMount(){
-  this.props.fetchDays({type: 'FETCH_DAYS', payload: {days: ['20210430']}})
-  //   fetch('http://localhost:3000/api/v1/days')
-  //   .then(response => response.json())
-  //   .then(data => console.log(data))
-  //   .catch(console.log)
+  this.props.fetchLessons({type: 'FETCH_LESSONS', payload: {days: ['20210430']}})
   }
   
     render (){
@@ -39,5 +35,5 @@ class App extends React.Component {
 //   }
 // }
 
-export default connect(null, {fetchDays})(App);
+export default connect(null, {fetchLessons})(App);
   

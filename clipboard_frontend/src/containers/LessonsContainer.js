@@ -1,12 +1,12 @@
 import React from 'react' 
-import Days from '../components/Days'
+import Days from '../components/Lessons'
 import {connect} from 'react-redux'
-import {fetchDays} from '../actions/fetchDays'
+import {fetchLessons} from '../actions/fetchLessons'
 
 class DaysContainer extends React.Component {
 
     componentDidMount(){
-        this.props.fetchDays()
+        this.props.fetchLessons()
     }
 
 
@@ -32,4 +32,4 @@ const mapStateToProps = state => {
 
 
 
-export default connect(mapStateToProps, {fetchDays})(DaysContainer)
+export default connect(mapStateToProps, {fetchLessons})(DaysContainer)
