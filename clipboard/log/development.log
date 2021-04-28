@@ -8821,3 +8821,44 @@ Migrating to CreateLessons (20210422231216)
   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
   [1m[36mLesson Create (0.4ms)[0m  [1m[32mINSERT INTO "lessons" ("title", "start", "end", "subject", "objective", "summary", "lesson_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Intro to Poetry - Alliteration"], ["start", "2019-04-19 12:00:00"], ["end", "2019-04-19 14:00:00"], ["subject", "Reading"], ["objective", "Students will be able to develop skills in reading poetry by applying a variety of reading strategies, learn about the alliteration element of poetry, and identify alliteration in a poem."], ["summary", "Students will learn about alliteration and how authors use it for emphasis or effect. Student will learn to identify alliteration as the use of the same beginning constant sound in a line or verse."], ["lesson_url", "https://docs.google.com/presentation/d/1qkX1du4iM29k9yVOAsSorewng9Hb54d5b_xuw-YdVhE/edit?usp=sharing"], ["created_at", "2021-04-28 17:56:42.567826"], ["updated_at", "2021-04-28 17:56:42.567826"]]
   [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/api/v1/lessons" for ::1 at 2021-04-28 13:57:27 -0400
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (0.4ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (102.39ms)
+Completed 500 Internal Server Error in 249ms (ActiveRecord: 7.1ms | Allocations: 12585)
+
+
+  
+NoMethodError (undefined method `startTime' for #<Lesson:0x00007f8833765f80>
+Did you mean?  start):
+  
+app/controllers/api/v1/lessons_controller.rb:8:in `index'
+Started GET "/api/v1/lessons" for ::1 at 2021-04-28 13:57:39 -0400
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (0.3ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (22.78ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.3ms | Allocations: 3673)
+
+
+  
+NoMethodError (undefined method `startTime' for #<Lesson:0x00007f883399bb88>
+Did you mean?  start):
+  
+app/controllers/api/v1/lessons_controller.rb:8:in `index'
+Started GET "/api/v1/lessons" for ::1 at 2021-04-28 13:58:33 -0400
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (0.3ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (21.93ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.3ms | Allocations: 3673)
+
+
+  
+NoMethodError (undefined method `startTime' for #<Lesson:0x00007f8833a2dce0>
+Did you mean?  start):
+  
+app/controllers/api/v1/lessons_controller.rb:8:in `index'

@@ -1,5 +1,5 @@
 class LessonSerializer < ActiveModel::Serializer
   # belongs_to :day
-  attributes :title, :startTime, :endTime
+  attributes :title, :start, :end
   # :subject, :objective, :summary, :lesson_url
 end
