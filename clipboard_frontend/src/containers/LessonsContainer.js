@@ -1,9 +1,9 @@
 import React from 'react' 
-import Days from '../components/Lessons'
+import Lessons from '../components/Lessons'
 import {connect} from 'react-redux'
 import {fetchLessons} from '../actions/fetchLessons'
 
-class DaysContainer extends React.Component {
+class LessonsContainer extends React.Component {
 
     componentDidMount(){
         this.props.fetchLessons()
@@ -14,7 +14,7 @@ class DaysContainer extends React.Component {
         return(
             <div>
                 {/* <NewDayForm selectedDay={this.props.selectedDay}/> */}
-                <Days days={this.props.days}/>
+                <Lessons lessons={this.props.lessons}/>
             </div>
         )
     }
@@ -22,14 +22,14 @@ class DaysContainer extends React.Component {
 
 const mapStateToProps = state => {
     return {
-        days: state.days
+        lessons: state.lessons
     }
 }
 
 // const mapDispatchToProps = dispatch => ({
-//     fetchDays: date => dispatch({type: 'SELECTED_DAY', date})
+//     fetchLessons: date => dispatch({type: 'FETCH_LESSONS', date})
 // })
 
 
 
-export default connect(mapStateToProps, {fetchLessons})(DaysContainer)
+export default connect(mapStateToProps, {fetchLessons})(LessonsContainer)

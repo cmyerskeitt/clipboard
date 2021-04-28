@@ -11,22 +11,22 @@ const localizer = momentLocalizer(moment)
 class  MyCalendar extends React.Component{
   constructor(){
     super()
-    // const now = new Date();
-  //   const myLessonsList = [{
-  //     //test events/ call LessonList Component(C) => lesson(P) Compnent
-  //     id: 14,
-  //     title: 'Today',
-  //     start: new Date(new Date().setHours(new Date().getHours() - 3)),
-  //     end: new Date(new Date().setHours(new Date().getHours() + 3)),
-  // },
-  // {
-  //     id: 15,
-  //     title: 'Point in Time Event',
-  //     start: now,
-  //     end: now,
-  // }]
+    const now = new Date();
+    const myLessonsList = [{
+      //test events/ call LessonList Component(C) => lesson(P) Compnent
+      id: 14,
+      title: 'Today',
+      start: new Date(new Date().setHours(new Date().getHours() - 3)),
+      end: new Date(new Date().setHours(new Date().getHours() + 3)),
+  },
+  {
+      id: 15,
+      title: 'Point in Time Event',
+      start: now,
+      end: now,
+  }]
     this.state = {
-      lessons: []
+      lessons: myLessonsList
     }
   }
 
@@ -35,8 +35,8 @@ class  MyCalendar extends React.Component{
     const title = window.prompt(('New Lesson Title'))
     var startDate = moment.start
     var endDate = moment.end
-    console.log(startDate)
-    console.log(endDate)
+    // console.log(startDate)
+    // console.log(endDate)
     if (title)
     this.setState({
       lessons: [

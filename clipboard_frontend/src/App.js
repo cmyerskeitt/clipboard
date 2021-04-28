@@ -3,7 +3,7 @@ import MyCalendar from './calendar/MyCalendarContainer'
 import HeaderContainer from './header/HeaderContainer';
 import {connect} from 'react-redux'
 import {fetchLessons} from './actions/fetchLessons'
-import DaysContainer from './containers/LessonsContainer'
+import LessonsContainer from './containers/LessonsContainer'
 
 
 
@@ -12,7 +12,7 @@ class App extends React.Component {
 
  
   componentDidMount(){
-  this.props.fetchLessons({type: 'FETCH_LESSONS', payload: {days: ['20210430']}})
+  this.props.fetchLessons({type: 'FETCH_LESSONS', payload: {}})
   }
   
     render (){
@@ -20,7 +20,7 @@ class App extends React.Component {
 
           <div className="App">
             <HeaderContainer/>
-            <DaysContainer/>
+            <LessonsContainer/>
             <MyCalendar/>
           </div>
   
