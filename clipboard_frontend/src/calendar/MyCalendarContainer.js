@@ -2,9 +2,6 @@ import React from 'react'
 import {Calendar, Views, momentLocalizer} from 'react-big-calendar'
 import moment from 'moment'
 import "react-big-calendar/lib/css/react-big-calendar.css";
-import {connect} from 'react-redux'
-
-
 
 const localizer = momentLocalizer(moment)
 
@@ -12,7 +9,7 @@ const localizer = momentLocalizer(moment)
 class  MyCalendar extends React.Component{
   constructor(){
     super()
-  //   const now = new Date();
+    // const now = new Date();
   //   const myLessonsList = [{
   //     //test events/ call LessonList Component(C) => lesson(P) Compnent
   //     id: 14,
@@ -31,13 +28,17 @@ class  MyCalendar extends React.Component{
     }
   }
 
+//   componentDidMount(){
+//     this.props.fetchLessons()
+// }
+
   //insert NewLessonForm?addNewLessonAlert => AddNewLesson 
   handleSelectedSlot = ({start, end}) => {
     const title = window.prompt(('New Lesson Title'))
     var startDate = moment.start
     var endDate = moment.end
-    // console.log(startDate)
-    // console.log(endDate)
+    console.log(startDate)
+    console.log(endDate)
     if (title)
     this.setState({
       lessons: [
@@ -50,6 +51,7 @@ class  MyCalendar extends React.Component{
         }
       ]
     })
+
   }
 
   //display Lesson Component 
@@ -84,11 +86,7 @@ class  MyCalendar extends React.Component{
   }
 }
 
-const mapStateToProps = state => {
-  return ({
-    lessons: state.lessons
-  })
-}
 
 
-export default connect(mapStateToProps)(MyCalendar)
+
+export default MyCalendar

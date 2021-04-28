@@ -1,7 +1,8 @@
 import React from 'react' 
-import Lessons from '../components/Lessons'
+import Lessons from './Lessons'
 import {connect} from 'react-redux'
 import {fetchLessons} from '../actions/fetchLessons'
+import MyCalendar from '../calendar/MyCalendarContainer'
 
 class LessonsContainer extends React.Component {
 
@@ -14,7 +15,8 @@ class LessonsContainer extends React.Component {
         return(
             <div>
                 {/* <NewDayForm selectedDay={this.props.selectedDay}/> */}
-                <Lessons lessons={this.props.lessons}/>
+                <Lessons />
+                <MyCalendar/>
             </div>
         )
     }

@@ -7,7 +7,3 @@ export default function lessonReducer(state = {lessons: []}, action){
         return state
   }
 }
-
-// export default function dayReducer(state = {days: [], lessons:[]}, action){
-//   return state
-// }

@@ -3,16 +3,13 @@ import MyCalendar from './calendar/MyCalendarContainer'
 import HeaderContainer from './header/HeaderContainer';
 import {connect} from 'react-redux'
 import {fetchLessons} from './actions/fetchLessons'
-import LessonsContainer from './containers/LessonsContainer'
-
-
 
 
 class App extends React.Component {
 
  
   componentDidMount(){
-  this.props.fetchLessons({type: 'FETCH_LESSONS', payload: {}})
+  this.props.fetchLessons()
   }
   
     render (){
@@ -20,8 +17,7 @@ class App extends React.Component {
 
           <div className="App">
             <HeaderContainer/>
-            <LessonsContainer/>
-            <MyCalendar/>
+            <MyCalendar />
           </div>
   
     )
@@ -29,11 +25,11 @@ class App extends React.Component {
   }
 }
 
-// const mapStateToProps = (state) => {
-//   return {
-//     days: state.days
-//   }
-// }
+const mapStateToProps = (state) => {
+  return {
+    lessons: state.lessons
+  }
+}
 
-export default connect(null, {fetchLessons})(App);
+export default connect(mapStateToProps, {fetchLessons})(App);
   
