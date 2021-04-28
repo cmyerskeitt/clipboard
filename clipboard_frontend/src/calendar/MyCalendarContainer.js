@@ -3,11 +3,12 @@ import {Calendar, Views, momentLocalizer} from 'react-big-calendar'
 import moment from 'moment'
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import { connect } from 'react-redux';
+import {createLesson} from "../actions/createLesson"
 
 const localizer = momentLocalizer(moment)
 
 
-class  MyCalendar extends React.Component{
+class MyCalendar extends React.Component{
   constructor(props){
     super(props)
     this.state = {
@@ -19,10 +20,10 @@ class  MyCalendar extends React.Component{
   //insert NewLessonForm?addNewLessonAlert => AddNewLesson 
   handleSelectedSlot = ({start, end}) => {
     const title = window.prompt(('New Lesson Title'))
-    var startDate = moment.start
-    var endDate = moment.end
-    console.log(startDate)
-    console.log(endDate)
+    // var startDate = moment.start
+    // var endDate = moment.end
+    // console.log(startDate)
+    // console.log(endDate)
     if (title)
     this.setState({
       lessons: [
@@ -35,10 +36,12 @@ class  MyCalendar extends React.Component{
         }
       ]
     })
-    // action.preventdefault()
-    this.props.createLesson(this.state)
     console.log(this.state.lessons)
+    this.props.createLesson(this.state.lessons)
   }
+
+
+
 
   //display Lesson Component 
   onLessonClick = (event) => {
@@ -79,14 +82,14 @@ const mapStateToProps = state => {
     }
 }
 
-// const mapDispatchToProps = (dispatch) => {
-//   return{
-//       createLesson: (lesson) => dispatch(createLesson(lesson)),
-//   }
-// }
+const mapDispatchToProps = (dispatch) => {
+  return{
+      createLesson: () => dispatch(createLesson()),
+  }
+}
 
 
-export default connect(mapStateToProps)(MyCalendar)
+export default connect(mapStateToProps, mapDispatchToProps)(MyCalendar)
 
     // const now = new Date();
   //   const myLessonsList = [{
