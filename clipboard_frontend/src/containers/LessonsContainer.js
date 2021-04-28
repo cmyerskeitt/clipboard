@@ -15,18 +15,18 @@ class LessonsContainer extends React.Component {
         return(
             <div>
                 {/* <NewDayForm selectedDay={this.props.selectedDay}/> */}
-                <Lessons />
-                <MyCalendar/>
+                {/* <Lessons /> */}
+                {/* <MyCalendar/> */}
             </div>
         )
     }
 }
 
-const mapStateToProps = state => {
-    return {
-        lessons: state.lessons
-    }
-}
+// const mapStateToProps = state => {
+//     return {
+//         lessons: state.lessons
+//     }
+// }
 
 // const mapDispatchToProps = dispatch => ({
 //     fetchLessons: date => dispatch({type: 'FETCH_LESSONS', date})

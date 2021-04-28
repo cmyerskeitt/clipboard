@@ -2,36 +2,20 @@ import React from 'react'
 import {Calendar, Views, momentLocalizer} from 'react-big-calendar'
 import moment from 'moment'
 import "react-big-calendar/lib/css/react-big-calendar.css";
+import { connect } from 'react-redux';
 
 const localizer = momentLocalizer(moment)
 
 
 class  MyCalendar extends React.Component{
-  constructor(){
-    super()
-    // const now = new Date();
-  //   const myLessonsList = [{
-  //     //test events/ call LessonList Component(C) => lesson(P) Compnent
-  //     id: 14,
-  //     title: 'Today',
-  //     start: new Date(new Date().setHours(new Date().getHours() - 3)),
-  //     end: new Date(new Date().setHours(new Date().getHours() + 3)),
-  // },
-  // {
-  //     id: 15,
-  //     title: 'Point in Time Event',
-  //     start: now,
-  //     end: now,
-  // }]
+  constructor(props){
+    super(props)
     this.state = {
       lessons: []
     }
   }
 
-//   componentDidMount(){
-//     this.props.fetchLessons()
-// }
-
+  
   //insert NewLessonForm?addNewLessonAlert => AddNewLesson 
   handleSelectedSlot = ({start, end}) => {
     const title = window.prompt(('New Lesson Title'))
@@ -46,12 +30,14 @@ class  MyCalendar extends React.Component{
         {
           title,
           start,
-          end,
+          end
 
         }
       ]
     })
-
+    // action.preventdefault()
+    this.props.createLesson(this.state)
+    console.log(this.state.lessons)
   }
 
   //display Lesson Component 
@@ -87,6 +73,32 @@ class  MyCalendar extends React.Component{
 }
 
 
+const mapStateToProps = state => {
+    return {
+      lessons: state.lessons 
+    }
+}
+
+// const mapDispatchToProps = (dispatch) => {
+//   return{
+//       createLesson: (lesson) => dispatch(createLesson(lesson)),
+//   }
+// }
 
 
-export default MyCalendar
+export default connect(mapStateToProps)(MyCalendar)
+
+    // const now = new Date();
+  //   const myLessonsList = [{
+  //     //test events/ call LessonList Component(C) => lesson(P) Compnent
+  //     id: 14,
+  //     title: 'Today',
+  //     start: new Date(new Date().setHours(new Date().getHours() - 3)),
+  //     end: new Date(new Date().setHours(new Date().getHours() + 3)),
+  // },
+  // {
+  //     id: 15,
+  //     title: 'Point in Time Event',
+  //     start: now,
+  //     end: now,
+  // }]
