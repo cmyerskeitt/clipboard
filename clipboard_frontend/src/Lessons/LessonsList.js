@@ -5,14 +5,16 @@ import LessonCard from './LessonCard.js'
 
 class LessonList extends React.Component{
     makeLessonCards(){
-        return this.props.lessons.map(lesson => (
+        
+        return (this.props.lessons.map(lesson => (
             // <LessonCard lesson={lesson} key={lesson.id}/>
             <LessonCard lesson={lesson} />
-        ))
+        )))
     }
 
     render(){
-        return <div>{this.makeLessonCards()} </div>
+        return this.props.lessons
+        // return <div>{this.makeLessonCards()} </div>
     }
 }
 

@@ -5,10 +5,7 @@ import "react-big-calendar/lib/css/react-big-calendar.css";
 import { connect } from 'react-redux';
 import {createLesson} from "../actions/createLesson"
 
-
-
 const localizer = momentLocalizer(moment)
-
 
 class MyCalendar extends React.Component{
   constructor(props){
@@ -24,28 +21,31 @@ class MyCalendar extends React.Component{
   handleSelectedSlot = ({start, end}) => { 
     console.log(this.state.lesssons)
     const title = window.prompt(('New Lesson Title'))
-    var startDate = moment(start).format()
-    var endDate = moment(end).format()
-    console.log(start)
-    console.log(end)
+    // var startDate = moment(start).format()
+    // var endDate = moment(end).format()
+    // console.log(start)
+    // console.log(end)
     if (title)
       this.setState({
       lessons: [
-        ...this.state.lessons,
-        {
-          title,
-          start,
-          end,
-        }
+        ...this.state.lessons
+        // {
+        //   title,
+        //   start,
+        //   end,
+        // }
       ]
     })
     console.log(this.state.lessons)
+    var formatStart = new Date(new Date().setHours(new Date().getHours() - 3))
+    var formatEnd = new Date(new Date().setHours(new Date().getHours() - 3))
+    let event = {title: title, start: formatStart, end: formatEnd }
+
     debugger
-    this.props.createLesson( {title: title, start: startDate, end: endDate })
-    debugger
-    this.setState({
-      lessons: []
-    })
+    this.props.createLesson(event)
+    // this.setState({
+    //   lessons: []
+    // })
     // debugger
   }
 
@@ -117,3 +117,6 @@ export default connect(null, mapDispatchToProps)(MyCalendar)
   //     start: now,
   //     end: now,
   // }]
+
+  // let d1Start = moment().add(1, "hours").toDate();
+  // let d1End = moment(d1Start).add(1, "hours").toDate();
