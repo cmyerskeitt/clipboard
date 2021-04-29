@@ -36,7 +36,6 @@ class MyCalendar extends React.Component{
           title,
           start,
           end,
-
         }
       ]
     })

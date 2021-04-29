@@ -4,7 +4,8 @@ import HeaderContainer from './header/HeaderContainer';
 import {connect} from 'react-redux'
 import {fetchLessons} from './actions/fetchLessons'
 import HomeContainer from './home/homeContainer';
-import LessonsContainer from './containers/LessonsContainer'
+// import LessonsContainer from './Lessons/LessonsContainer'
+
 // import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 
 class App extends React.Component {
@@ -12,30 +13,21 @@ class App extends React.Component {
  
   componentDidMount(){
   this.props.fetchLessons()
-  
   }
   
     render (){
-      return (
-        // <Router>
+      return (  
+      
           <div className="App">
             <HeaderContainer/>
-              {/* <Switch>
-                <Route path="/">  */}
-                  <HomeContainer/>
-                {/* </Route>
-                <Route path="/lessons/new"> */}
-                    <MyCalendar lessons={this.props.lessons} />
-                {/* </Route>
-                <Route path="/lessons"> */}
-                    <LessonsContainer/>
-                {/* </Route>
-              </Switch> */}
+            <HomeContainer/>
+            {/* <LessonsContainer lessons={this.props.lessons}/> */}
+            <MyCalendar lessons={this.props.lessons} />
           </div>
-        // </Router>
-    )
+
+     )
   
-  }
+    }
 }
 
 const mapStateToProps = (state) => {
