@@ -1,6 +1,6 @@
 // import cuid from 'cuid'
 
-export default function lessonReducer(state = {lessons: []}, action){
+export default function lessonReducer(state = {lessons: [], loading: false}, action){
   debugger 
   console.log(action.payload)
   console.log(action.lessons)
@@ -9,8 +9,6 @@ export default function lessonReducer(state = {lessons: []}, action){
     case 'FETCH_LESSONS':
         return {lessons: action.payload}
     case 'CREATE_LESSON':
-      // const lesson = {lessons: action.lesson, id: cuid()}
-      debugger
         return {lessons: [...state.lessons, action.lesson[0]]}
     default:
         return state

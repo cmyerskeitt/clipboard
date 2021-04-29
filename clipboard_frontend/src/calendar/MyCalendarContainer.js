@@ -22,10 +22,10 @@ class MyCalendar extends React.Component{
   handleSelectedSlot = ({start, end}) => { 
     console.log(this.state.lesssons)
     const title = window.prompt(('New Lesson Title'))
-    // // var startDate = moment(start).format()
-    // // var endDate = moment(end).format()
-    // console.log(startDate)
-    // console.log(endDate)
+    var startDate = moment(start).format()
+    var endDate = moment(end).format()
+    console.log(startDate)
+    console.log(endDate)
     if (title)
       this.setState({
       lessons: [
@@ -41,11 +41,11 @@ class MyCalendar extends React.Component{
     console.log(this.state.lessons)
     debugger
     this.props.createLesson(this.state.lessons)
-    // this.state.lessons.push(this.props.lessons)
+    debugger
     this.setState({
       lessons: []
     })
-    debugger
+    // debugger
   }
 
 
@@ -55,7 +55,9 @@ class MyCalendar extends React.Component{
   //display Lesson Component 
   onLessonClick = (event) => {
     console.log(event)
-    window.alert(event.title)
+    window.alert(
+      event.title && event.start
+      )
   }
 
 
