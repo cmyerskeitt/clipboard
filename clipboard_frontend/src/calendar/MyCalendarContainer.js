@@ -5,6 +5,8 @@ import "react-big-calendar/lib/css/react-big-calendar.css";
 import { connect } from 'react-redux';
 import {createLesson} from "../actions/createLesson"
 
+
+
 const localizer = momentLocalizer(moment)
 
 
@@ -33,7 +35,7 @@ class MyCalendar extends React.Component{
         {
           title,
           start,
-          end
+          end,
 
         }
       ]
@@ -79,7 +81,7 @@ class MyCalendar extends React.Component{
           style={{ 
             height: "100vh",
           }}
-
+      
         />
       </div>
       )

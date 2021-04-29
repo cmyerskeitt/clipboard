@@ -4,7 +4,8 @@ import HeaderContainer from './header/HeaderContainer';
 import {connect} from 'react-redux'
 import {fetchLessons} from './actions/fetchLessons'
 import HomeContainer from './home/homeContainer';
-
+import LessonsContainer from './containers/LessonsContainer'
+// import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 
 class App extends React.Component {
 
@@ -16,13 +17,22 @@ class App extends React.Component {
   
     render (){
       return (
-
+        // <Router>
           <div className="App">
-            <HomeContainer/>
             <HeaderContainer/>
-            <MyCalendar lessons={this.props.lessons} />
+              {/* <Switch>
+                <Route path="/">  */}
+                  <HomeContainer/>
+                {/* </Route>
+                <Route path="/lessons/new"> */}
+                    <MyCalendar lessons={this.props.lessons} />
+                {/* </Route>
+                <Route path="/lessons"> */}
+                    <LessonsContainer/>
+                {/* </Route>
+              </Switch> */}
           </div>
-  
+        // </Router>
     )
   
   }
