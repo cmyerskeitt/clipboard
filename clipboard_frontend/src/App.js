@@ -3,6 +3,7 @@ import MyCalendar from './calendar/MyCalendarContainer'
 import HeaderContainer from './header/HeaderContainer';
 import {connect} from 'react-redux'
 import {fetchLessons} from './actions/fetchLessons'
+import HomeContainer from './home/homeContainer';
 
 
 class App extends React.Component {
@@ -17,6 +18,7 @@ class App extends React.Component {
       return (
 
           <div className="App">
+            <HomeContainer/>
             <HeaderContainer/>
             <MyCalendar lessons={this.props.lessons} />
           </div>
