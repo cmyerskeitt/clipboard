@@ -26,8 +26,8 @@ class MyCalendar extends React.Component{
     const title = window.prompt(('New Lesson Title'))
     var startDate = moment(start).format()
     var endDate = moment(end).format()
-    console.log(startDate)
-    console.log(endDate)
+    console.log(start)
+    console.log(end)
     if (title)
       this.setState({
       lessons: [
@@ -41,7 +41,7 @@ class MyCalendar extends React.Component{
     })
     console.log(this.state.lessons)
     debugger
-    this.props.createLesson(this.state.lessons)
+    this.props.createLesson( {title: title, start: startDate, end: endDate })
     debugger
     this.setState({
       lessons: []

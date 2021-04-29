@@ -6,6 +6,7 @@ import LessonCard from './LessonCard.js'
 class LessonList extends React.Component{
     makeLessonCards(){
         return this.props.lessons.map(lesson => (
+            // <LessonCard lesson={lesson} key={lesson.id}/>
             <LessonCard lesson={lesson} />
         ))
     }

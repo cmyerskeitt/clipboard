@@ -10,7 +10,7 @@ export default function lessonReducer(state = {lessons: [], loading: false}, act
         return {lessons: action.payload}
     case 'CREATE_LESSON':
         // const lesson = {lessons: action.lesson[0], id: cuid()}
-        return {lessons: [...state.lessons, action.lesson[0]]}
+        return {lessons: [...state.lessons, action.lesson]}
     default:
         return state
   }

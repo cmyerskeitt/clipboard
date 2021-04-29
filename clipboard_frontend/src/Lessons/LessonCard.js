@@ -4,7 +4,8 @@ import React from 'react'
 
 export default function LessonCard(props){
     return(
-        <div id={props.lessons.key}>
+        // <div id={key}>
+        <div>
             <h3>
                 <u>{props.lesson.title}</u>
             </h3>
