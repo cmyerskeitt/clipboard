@@ -11,7 +11,7 @@ export default function lessonReducer(state = {lessons: []}, action){
     case 'CREATE_LESSON':
       // const lesson = {lessons: action.lesson, id: cuid()}
       debugger
-        return {lessons: [...state.lessons, action.lesson]}
+        return {lessons: [...state.lessons, action.lesson[0]]}
     default:
         return state
   }
