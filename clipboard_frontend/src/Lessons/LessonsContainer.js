@@ -4,16 +4,17 @@ import LessonsList from './LessonsList'
 
 class LessonsContainer extends React.Component{
     render(){
+        debugger
         return(
             <div>
                 <h2> All Lessons </h2>
-                <LessonsList lessons={this.props.lessons}/>
+                {this.props.lessons.map(lesson => <h5>{lesson.title} ~ {lesson.start}</h5>)}
             </div>
         )
     }
 }
-
+ 
 const mapStateToProps = (state) => {
-    return state
+    return {lessons: state.lessons}
 }
 export default connect(mapStateToProps)(LessonsContainer)

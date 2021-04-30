@@ -6,15 +6,17 @@ import {createLesson} from "../actions/createLesson"
 import moment from 'moment'
 
 
+// moment.locale("en");
 const localizer = momentLocalizer(moment)
+// console.log(moment)
+// let allViews = Object.keys(Views).map(k => Views[k])
 
 class MyCalendar extends React.Component {
   constructor(props){
     super(props)
-    debugger
+    // debugger
     this.state = {
       lessons: this.props.lessons
-      // this.props.lessons
     }
     console.log(this.props.lessons)
   }
@@ -24,19 +26,21 @@ class MyCalendar extends React.Component {
   
   //insert NewLessonForm?addNewLessonAlert => AddNewLesson 
   handleSelectedSlot = ({start, end}) => { 
-    console.log(this.props.lesson)
+    console.log(start)
     const title = window.prompt(('New Lesson Title'))
-    // // var startDate = moment(start).format()
-    // // var endDate = moment(end).format()
-    // // console.log(start)
-    // // console.log(end)
-    let event = {title: title, start: start, end: end }
+    let s = moment(start)
+    let e = moment(end)
+    console.log(s)
+    let ss = s.format()
+    console.log(ss)
+    let event = {title: title, start: s._i, end: e._i}
+    console.log(event)
     this.props.createLesson(event)
     if (title)
       this.setState({
       lessons: [
         ...this.state.lessons]})
-        console.log(this.state.lessons)
+    //     console.log(this.state.lessons)
         
   }
   
@@ -69,7 +73,7 @@ class MyCalendar extends React.Component {
     onLessonClick = (event) => {
       console.log(event)
       window.alert(
-        event.title && event.start
+      event.start
         )
     }
 
@@ -84,14 +88,14 @@ class MyCalendar extends React.Component {
             step={10}
             startAccessor="start"
             endAccessor="end"
-            defaultDate={new Date()}
-            views={['month','week','day']}
-            defaultView={Views.WEEK}
+            defaultDate={moment().toDate()}
+            views={["month","week","day"]}
+            defaultView={Views.MONTH}
             onSelectEvent={this.onLessonClick}
             onSelectSlot={this.handleSelectedSlot}
             style={{ 
-              height: "100vh"
-            }}/>
+              height: "100vh"}}
+            />
         </div>
       )
     }
@@ -153,3 +157,6 @@ export default connect(mapStateToProps, mapDispatchToProps)(MyCalendar)
   // style={{ 
   //   height: "100vh",
   // }}
+
+  // 2021-04-30T16:03:47-04:00
+  // Fri Apr 30 2021 01:20:00 GMT-0400 (Eastern Daylight Time)

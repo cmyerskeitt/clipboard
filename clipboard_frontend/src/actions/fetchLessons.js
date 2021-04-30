@@ -1,5 +1,6 @@
 export function fetchLessons(){
-    // return action 
+    // return action
+  
     return (dispatch) => {
     console.log("inside fetch")
     fetch('http://localhost:3000/api/v1/lessons')
@@ -8,7 +9,7 @@ export function fetchLessons(){
     // .catch(console.log)
     .then(lessons => dispatch({
         type: 'FETCH_LESSONS',
-        lessons:lessons
+        lessons: lessons
     }))
     
     }

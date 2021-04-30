@@ -21,7 +21,7 @@ class App extends React.Component {
           <div className="App">
             <HeaderContainer/>
             <HomeContainer/>
-            {/* <LessonsContainer lessons={this.props.lessons}/> */}
+            <LessonsContainer lessons={this.props.lessons}/>
             <MyCalendar lessons={this.props.lessons} />
           </div>
 
