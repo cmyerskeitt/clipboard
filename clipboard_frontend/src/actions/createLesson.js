@@ -11,8 +11,10 @@ export const createLesson = (lesson) => {
             body: JSON.stringify(lesson),
         })
             .then((res) => res.json())
+            //   .then(data => console.log(data))
+            //  .catch(console.log)
             .then((lesson) => {
-                dispatch({type: "CREATE_LESSON", lesson})
+                dispatch({type: "CREATE_LESSON", payload: lesson})
             })
     }
     // return {type: "CREATE_LESSON", lesson}
