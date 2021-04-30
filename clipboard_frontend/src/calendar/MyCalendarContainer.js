@@ -11,8 +11,10 @@ const localizer = momentLocalizer(moment)
 class MyCalendar extends React.Component {
   constructor(props){
     super(props)
+    debugger
     this.state = {
       lessons: this.props.lessons
+      // this.props.lessons
     }
     console.log(this.props.lessons)
   }
@@ -30,15 +32,12 @@ class MyCalendar extends React.Component {
     // // console.log(end)
     let event = {title: title, start: start, end: end }
     this.props.createLesson(event)
-    console.log(start)
-    console.log(end)
-    console.log(this.state.lessons)
     if (title)
       this.setState({
       lessons: [
         ...this.state.lessons]})
         console.log(this.state.lessons)
-        console.log(this.props.lessons)
+        
   }
   
     //     // {
@@ -110,8 +109,14 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
+const mapStateToProps = (state) => {
+  return {
+    lessons: state.lessons
+  }
+}
 
-export default connect(null, mapDispatchToProps)(MyCalendar)
+
+export default connect(mapStateToProps, mapDispatchToProps)(MyCalendar)
 
     // const now = new Date();
   //   const myLessonsList = [{

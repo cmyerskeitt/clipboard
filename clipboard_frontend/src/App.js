@@ -11,9 +11,9 @@ import LessonsContainer from './Lessons/LessonsContainer'
 class App extends React.Component {
 
  
-  // componentDidMount(){
-  // this.props.fetchLessons()
-  // }
+  componentDidMount(){
+  this.props.fetchLessons()
+  }
   
     render (){
       return (  
@@ -21,7 +21,7 @@ class App extends React.Component {
           <div className="App">
             <HeaderContainer/>
             <HomeContainer/>
-            <LessonsContainer lessons={this.props.lessons}/>
+            {/* <LessonsContainer lessons={this.props.lessons}/> */}
             <MyCalendar lessons={this.props.lessons} />
           </div>
 

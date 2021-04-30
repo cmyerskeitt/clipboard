@@ -1,4 +1,4 @@
-// export function fetchLessons(){
+export function fetchLessons(){
     // return action 
     return (dispatch) => {
     console.log("inside fetch")
@@ -8,7 +8,7 @@
     // .catch(console.log)
     .then(lessons => dispatch({
         type: 'FETCH_LESSONS',
-        payload: lessons
+        lessons:lessons
     }))
     
     }
