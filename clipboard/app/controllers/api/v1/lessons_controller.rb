@@ -10,8 +10,11 @@ class Api::V1::LessonsController < ApplicationController
 
     def create 
         binding.pry
-        lesson = Lesson.new(lesson_params)
+
+        lesson = Lesson.create(lesson_params)
+        binding.pry
         if lesson.save
+            binding.pry
             render json: lesson
         else
             render json: {error: 'Error creating Lesson'}
@@ -19,8 +22,9 @@ class Api::V1::LessonsController < ApplicationController
     end 
 
     def show 
-        lesson = @day.lessons.find(params[:id])
+        lesson = lessons.find(params[:id])
         if lesson 
+            binding.pry
         #  Lesson.find(params[:id])
             render json: lesson
         else

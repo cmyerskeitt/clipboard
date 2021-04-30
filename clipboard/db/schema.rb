@@ -16,10 +16,6 @@ ActiveRecord::Schema.define(version: 2021_04_22_231216) do
     t.string "title"
     t.datetime "start"
     t.datetime "end"
-    t.string "subject"
-    t.text "objective"
-    t.text "summary"
-    t.string "lesson_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
