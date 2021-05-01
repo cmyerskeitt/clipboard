@@ -12,9 +12,9 @@ class Api::V1::LessonsController < ApplicationController
         binding.pry
 
         lesson = Lesson.create(lesson_params)
-        binding.pry
+        # binding.pry
         if lesson.save
-            binding.pry
+            # binding.pry
             render json: lesson
         else
             render json: {error: 'Error creating Lesson'}
@@ -24,7 +24,9 @@ class Api::V1::LessonsController < ApplicationController
     def show 
         lesson = lessons.find(params[:id])
         if lesson 
-            binding.pry
+            lesson.to_formatted_s(:rfc822)
+            # binding.pry
+          
         #  Lesson.find(params[:id])
             render json: lesson
         else
@@ -46,7 +48,7 @@ class Api::V1::LessonsController < ApplicationController
     # end 
 
     def lesson_params
-        params.require(:lesson).permit(:title, :start, :end)
+        params.require(:lesson).permit(:title, :start, :end, :id)
             # , :subject, :objective, :summary, :lesson_url, :day_id)
     end 
 end

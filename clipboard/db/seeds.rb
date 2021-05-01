@@ -7,18 +7,19 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 # monday = Day.create(date: 20210419 )
 
-# lesson = Lesson.create(
-#     title: 'Intro to Poetry - Rhyming', 
-#     start: DateTime.new(2019,4,19,8),
-#     end: DateTime.new(2019,4,19,10),
+lesson = Lesson.create(
+    title: 'Intro to Poetry - Rhyming', 
+    start: DateTime.new(2019,04,19,8,00),
+    end: DateTime.new(2019,04,19,10,00),
   
     
-#     )
+    )
 
-#  lesson_two = Lesson.create(
-#     title: 'Intro to Poetry - Alliteration',
-#     start: DateTime.new(2019,4,19,12),
-#     end: DateTime.new(2019,4,19,14),
+ lesson_two = Lesson.create(
+    title: 'Intro to Poetry - Alliteration',
+    start: DateTime.new(2019,04,19,12,00),
+    end: DateTime.new(2019,04,19,14,00),
+)
 #    #  subject: 'Reading', 
 #    #  objective: 'Students will be able to develop skills in reading poetry by applying a variety of reading strategies, learn about the alliteration element of poetry, and identify alliteration in a poem.', 
 #    #  summary: 'Students will learn about alliteration and how authors use it for emphasis or effect. Student will learn to identify alliteration as the use of the same beginning constant sound in a line or verse.', 
