@@ -2,8 +2,6 @@
 
 export default function lessonReducer(state = {lessons: [], loading: false}, action){
    console.log(action.payload)
-
-    debugger
   // const moment = require('moment')
   switch (action.type){
     case 'FETCH_LESSONS':

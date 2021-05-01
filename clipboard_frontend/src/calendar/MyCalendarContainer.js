@@ -28,12 +28,12 @@ class MyCalendar extends React.Component {
   handleSelectedSlot = ({start, end}) => { 
     console.log(start)
     const title = window.prompt(('New Lesson Title'))
-    let s = moment(start)
-    let e = moment(end)
-    console.log(s)
-    let ss = s.format()
-    console.log(ss)
-    let event = {title: title, start: s._i, end: e._i}
+    // let s = moment(start)
+    let e = moment(end).toString()
+    // console.log(s)
+    let ss = moment(start).format()
+    // console.log(ss)
+    let event = {title: title, start: new Date(ss), end: new Date(e)}
     console.log(event)
     this.props.createLesson(event)
     if (title)
