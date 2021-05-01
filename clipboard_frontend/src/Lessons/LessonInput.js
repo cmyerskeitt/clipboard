@@ -1,13 +1,17 @@
 import React from 'react' 
 import { connect } from 'react-redux'
-import uuid from 'uuid'
+import {createLesson} from '../actions/createLesson'
 
 class LessonInput extends React.Component { 
-    state = {
+    constructor(){
+        super()
+         this.state = {
             title: "",
             start: "",
             end: ""
         }
+    }
+   
     
     
     handleOnChange = event => {
@@ -18,21 +22,20 @@ class LessonInput extends React.Component {
             
         })
        console.log({[name]: value})
-       console.log(this.state.title)
+    //    console.log(this.state.title)
     }
 
     //reroute to day view and display event/Day Component
     handleOnSubmit = event => {
         event.preventDefault()
-        const lesson = {...this.lesson, id: uuid}
+        const lesson = {...this.state, id: (Math.random)}
         this.props.createLesson(lesson)
+        console.log(lesson)
         this.setState({
             title: "",
             start: "",
             end: ""
         })
-        //post request to db
-        // dispatch add day 
     }  
 
     render() {
@@ -52,12 +55,17 @@ class LessonInput extends React.Component {
     }
 }
 
-
-
   
 //   const mapStateToProps = (state) => {
 //     return {
 //       lessons: state.lessons
 //     }
 //   }
-export default connect()(LessonInput)
+
+
+  const mapDispatchToProps = dispatch => ({
+    createLesson: (lesson) => dispatch(createLesson(lesson)),
+  })
+
+
+export default connect(null, mapDispatchToProps)(LessonInput)

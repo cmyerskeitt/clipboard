@@ -92,7 +92,7 @@ class MyCalendar extends React.Component {
             views={["month","week","day"]}
             defaultView={Views.MONTH}
             onSelectEvent={this.onLessonClick}
-            onSelectSlot={this.handleSelectedSlot}
+            // onSelectSlot={this.handleSelectedSlot}
             style={{ 
               height: "100vh"}}
             />
