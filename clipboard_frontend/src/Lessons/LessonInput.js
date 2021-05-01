@@ -1,5 +1,6 @@
 import React from 'react' 
 import { connect } from 'react-redux'
+import uuid from 'uuid'
 
 class LessonInput extends React.Component { 
     state = {
@@ -23,7 +24,8 @@ class LessonInput extends React.Component {
     //reroute to day view and display event/Day Component
     handleOnSubmit = event => {
         event.preventDefault()
-        this.props.createLesson(this.state)
+        const lesson = {...this.lesson, id: uuid}
+        this.props.createLesson(lesson)
         this.setState({
             title: "",
             start: "",
