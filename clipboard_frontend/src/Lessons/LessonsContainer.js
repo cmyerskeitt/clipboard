@@ -1,7 +1,7 @@
 import React from "react"
 import {connect} from 'react-redux'
-import LessonInput from '../Lessons/LessonInput'
-import {createLesson} from '../actions/createLesson'
+
+// import {createLesson} from '../actions/createLesson'
 import LessonsList from '../Lessons/LessonsList'
 
 class LessonsContainer extends React.Component{
@@ -9,7 +9,6 @@ class LessonsContainer extends React.Component{
         // debugger
         return(
             <div>
-                <LessonInput createLesson={this.props.createLesson}/>
                 <LessonsList lessons={this.props.lessons}/>
             </div>
         )
@@ -20,11 +19,11 @@ const mapStateToProps = (state) => {
     return {lessons: state.lessons}
 }
 
-const mapDispatchToProps = dispatch => ({
-    createLesson: (lesson) => dispatch(createLesson(lesson)),
-  })
+// const mapDispatchToProps = dispatch => ({
+//     createLesson: (lesson) => dispatch(createLesson(lesson)),
+//   })
   
-export default connect(mapStateToProps, mapDispatchToProps)(LessonsContainer)
+export default connect(mapStateToProps)(LessonsContainer)
 
 //  {this.props.lessons.map(lesson => <h5>{lesson.title} ~ {lesson.start}</h5>)}
 //  {this.props.lessons.map(lesson => <h5>{lesson.title} ~ {lesson.start}</h5>)}

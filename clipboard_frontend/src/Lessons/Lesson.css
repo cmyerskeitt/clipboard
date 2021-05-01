@@ -1,7 +1,8 @@
 .lesson-card {
     background-color: coral;
     border: 10px groove darkturquoise;
-    padding: px;
+    border-radius: 30px;
+    padding: 15px;
     width: 350px;
     margin: 10px 0 5px 0;
     

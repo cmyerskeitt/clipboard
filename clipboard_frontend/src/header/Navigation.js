@@ -12,12 +12,12 @@ export default function Navigaton(){
                 </li>
                 <li>
                     <NavLink exact to="/lessons/new">
-                        Clipboard
+                        Create a Clipboard
                     </NavLink>
                 </li>
                 <li>
                     <NavLink exact to="/lessons">
-                        All Lessons
+                        All Clipboards
                     </NavLink>
                 </li>
             </ul>
