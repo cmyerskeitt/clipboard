@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import LessonCard from './LessonCard.js'
-
+import './Lesson.css'
 
 class LessonList extends React.Component{
  
