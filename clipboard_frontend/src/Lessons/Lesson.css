@@ -1,11 +1,18 @@
 .lesson-card {
     background-color: coral;
-    border: 4px double #262a2d;
-    padding: 5px;
+    border: 10px groove darkturquoise;
+    padding: px;
     width: 350px;
-    margin: 5px 0 5px 0;
+    margin: 10px 0 5px 0;
+    
+
+
 }
 
 .lesson-card h5 {
     text-align: center;
+}
+
+.lesson-card ::marker {
+    list-style-type: none;
 }

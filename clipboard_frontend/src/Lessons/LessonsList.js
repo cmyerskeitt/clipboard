@@ -15,7 +15,6 @@ class LessonList extends React.Component{
                     <li>
                        {lessons} 
                     </li>
-                    
                 </ul>
             </div>
         )  
