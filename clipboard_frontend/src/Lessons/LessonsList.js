@@ -11,11 +11,7 @@ class LessonList extends React.Component{
 
         return(
             <div>
-                <ul>
-                    <li>
-                       {lessons} 
-                    </li>
-                </ul>
+                {lessons} 
             </div>
         )  
     }
