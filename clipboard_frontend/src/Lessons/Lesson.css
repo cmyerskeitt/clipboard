@@ -14,19 +14,19 @@
 .lesson-card ::marker {
     list-style-type: none;
 }
-/* 
+
 ul {
     width: 100%;
     margin: auto;
-} */
+}
 
-//createtwocolumns
-ul {
+//
+/* ul {
     list-style-type: none;
     columns: 2;
     -webkit-columns: 2;
     -moz-columns: 2;
-}
+} */
 
 
 input {

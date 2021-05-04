@@ -39,7 +39,7 @@ class MyCalendar extends React.Component {
     onLessonClick = (event) => {
       console.log(event)
       window.alert(
-      event.start
+       event.start
         )
     }
 

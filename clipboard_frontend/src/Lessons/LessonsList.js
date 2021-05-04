@@ -11,7 +11,8 @@ class LessonList extends React.Component{
 
         return(
             <ul>
-                {lessons} 
+                <center>{lessons}</center>
+                
             </ul>
         )  
     }
