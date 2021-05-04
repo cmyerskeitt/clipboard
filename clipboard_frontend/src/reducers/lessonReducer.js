@@ -2,10 +2,8 @@
 
 export default function lessonReducer(state = {lessons: [], loading: false}, action){
    console.log(action.payload)
-  // const moment = require('moment')
   switch (action.type){
     case 'FETCH_LESSONS':
-      //  const moment = require('moment')
         return {lessons: action.lessons}
         // return {lessons: moment(action.payload).format()}
     case 'CREATE_LESSON':

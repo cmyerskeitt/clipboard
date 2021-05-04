@@ -51,4 +51,17 @@ const mapDispatchToProps = dispatch => ({
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
-  
+// <div className="App">
+// <HeaderContainer/>
+//   <Switch>
+//   <Route path="/lessons/new">
+//     <LessonsContainer lessons={this.props.lessons}/>
+//   </Route>
+//   <Route path="/lessons">
+//     <MyCalendar lessons={this.props.lessons} /> 
+//   </Route>
+//   <Route exact path="/">
+//     <HomeContainer/>
+//   </Route>
+//   </Switch>
+// </div>

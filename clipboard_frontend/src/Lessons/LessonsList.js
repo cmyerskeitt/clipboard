@@ -10,9 +10,9 @@ class LessonList extends React.Component{
         
 
         return(
-            <div>
+            <ul>
                 {lessons} 
-            </div>
+            </ul>
         )  
     }
 }
@@ -26,8 +26,3 @@ const mapStateToProps = (state) => {
 export default connect(mapStateToProps)(LessonList)
 
 // const lessons = this.props.lessons.map(lesson => <h5>{lesson.title} ~ {lesson.start}~ {lesson.start}</h5>) 
- //    makeLessonCards(){
-        // return (this.props.lessons.map(lesson => (
-        //     // <LessonCard lesson={lesson} key={lesson.id}/>
-        //     <LessonCard lesson={lesson} />
-        // )))

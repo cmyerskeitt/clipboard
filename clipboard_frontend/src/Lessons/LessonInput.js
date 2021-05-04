@@ -17,15 +17,12 @@ class LessonInput extends React.Component {
     handleOnChange = event => {
         const {value, name} = event.target
         this.setState({
-            
-            [name]: value
-            
+            [name]: value  
         })
        console.log({[name]: value})
-    //    console.log(this.state.title)
     }
 
-    //reroute to day view and display event/Day Component
+   
     handleOnSubmit = event => {
         event.preventDefault()
         const lesson = {...this.state, id: (Math.random)}

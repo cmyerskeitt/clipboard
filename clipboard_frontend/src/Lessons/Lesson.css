@@ -1,6 +1,6 @@
 .lesson-card {
-    background-color: coral;
-    border: 10px groove darkturquoise;
+    background-color: gold;
+    border: 10px groove royalblue;
     border-radius: 30px;
     padding: 15px;
     width: 350px;
@@ -16,4 +16,9 @@
 
 .lesson-card ::marker {
     list-style-type: none;
+}
+
+ul {
+    width: 100%;
+    margin: auto;
 }
