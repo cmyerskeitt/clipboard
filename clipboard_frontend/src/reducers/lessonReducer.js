@@ -1,15 +1,20 @@
 // import cuid from 'cuid'
 
-export default function lessonReducer(state = {lessons: [], loading: false}, action){
+export default function lessonReducer(state = {lessons: []}, action){
    console.log(action.payload)
   switch (action.type){
     case 'FETCH_LESSONS':
-        return {lessons: action.lessons}
-        // return {lessons: moment(action.payload).format()}
+        const l = action.lessons.map(function(a){
+            return {
+                ...a, start: new Date(a.start), end: new Date(a.end)
+            }
+        })
+        return {lessons: l}
+        // return {lessons: action.lessons}
     case 'CREATE_LESSON':
-        // const lesson = {lessons: action.lesson[0], id: cuid()}
-        return {...state, lessons: [...state.lessons, action.payload]}
-        // return {lessons: moment([...state.lessons, action.lesson]).format()}
+        const a = {...action.payload, start: new Date(action.payload.start), end: new Date(action.payload.end)}
+            return {...state, lessons: [...state.lessons, a]}
+        // return {...state, lessons: [...state.lessons, action.payload]}
     default:
         return state
   }

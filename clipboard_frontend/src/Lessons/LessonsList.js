@@ -7,11 +7,12 @@ class LessonList extends React.Component{
  
         render (){
                 const lessons = this.props.lessons.map(lesson => <LessonCard key={lesson.id} lesson={lesson} />) 
-        
 
         return(
             <ul>
-                <center>{lessons}</center>
+                <center>
+                    {lessons}
+                </center>
                 
             </ul>
         )  

@@ -17,23 +17,18 @@ class MyCalendar extends React.Component {
     console.log(this.props.lessons)
   }
   
-  // handleSelectedSlot = ({start, end}) => { 
-  //   console.log(start)
-  //   const title = window.prompt(('New Lesson Title'))
-  //   // let s = moment(start)
-  //   let e = moment(end).toString()
-  //   // console.log(s)
-  //   let ss = moment(start).format()
-  //   // console.log(ss)
-  //   let event = {title: title, start: new Date(ss), end: new Date(e)}
-  //   console.log(event)
-  //   this.props.createLesson(event)
-  //   if (title)
-  //     this.setState({
-  //     lessons: [
-  //       ...this.state.lessons]})
+  handleSelectedSlot = ({start, end}) => { 
+    console.log(start)
+    const title = window.prompt(('New Lesson Title'))
+    let event = {title: title, start: start, end: end}
+    console.log(event)
+    this.props.createLesson(event)
+    if (title)
+      this.setState({
+      lessons: [
+        ...this.state.lessons, event]})
         
-  // }
+  }
   
    
     onLessonClick = (event) => {
@@ -48,17 +43,17 @@ class MyCalendar extends React.Component {
       return(
         <div>
           <Calendar
-            // selectable={true}
+            selectable={true}
             localizer={localizer}
             events={this.props.lessons}
             step={10}
             startAccessor="start"
             endAccessor="end"
             defaultDate={moment().toDate()}
-            views={["month"]}
+            views={["month","work_week","day"]}
             defaultView={Views.MONTH}
             onSelectEvent={this.onLessonClick}
-            // onSelectSlot={this.handleSelectedSlot}
+            onSelectSlot={this.handleSelectedSlot}
             style={{ 
               height: "100vh"}}
             />
@@ -74,14 +69,14 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    lessons: state.lessons
-  }
-}
+// const mapStateToProps = (state) => {
+//   return {
+//     lessons: state.lessons
+//   }
+// }
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(MyCalendar)
+export default connect(null, mapDispatchToProps)(MyCalendar)
 
 
   // <Calendar
@@ -100,3 +95,21 @@ export default connect(mapStateToProps, mapDispatchToProps)(MyCalendar)
   // style={{ 
   //   height: "100vh",
   // }}
+
+    // handleSelectedSlot = ({start, end}) => { 
+  //   console.log(start)
+  //   const title = window.prompt(('New Lesson Title'))
+  //   // let s = moment(start)
+  //   let e = moment(end).toString()
+  //   // console.log(s)
+  //   let ss = moment(start).format()
+  //   // console.log(ss)
+  //   let event = {title: title, start: new Date(ss), end: new Date(e)}
+  //   console.log(event)
+  //   this.props.createLesson(event)
+  //   if (title)
+  //     this.setState({
+  //     lessons: [
+  //       ...this.state.lessons, event]})
+        
+  // }

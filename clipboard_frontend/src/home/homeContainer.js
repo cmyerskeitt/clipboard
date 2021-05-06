@@ -7,7 +7,7 @@ export default function HomeContainer(){
             <center>
             <h2>Welcome to Clipboard!</h2>
             <p>
-            Clipboard is a lesson tracking app designed to help make preparing for your day easier. <br></br>
+            Clipboard is a lesson tracking web application designed to help make preparing for your day easier. <br></br>
             Add your lesson information and quickly pinpoint when you will be teaching what and identify what you should start planning for next. 
             </p>
             <img src={homeImage} alt="Clipboard on Wall" id="home-image"/><br></br>

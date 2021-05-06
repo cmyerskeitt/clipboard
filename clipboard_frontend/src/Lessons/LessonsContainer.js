@@ -5,7 +5,7 @@ import LessonsList from '../Lessons/LessonsList'
 
 class LessonsContainer extends React.Component{
     render(){
-        // debugger
+        debugger
         return(
             <div>
                 <LessonInput />
@@ -23,5 +23,3 @@ const mapStateToProps = (state) => {
   
 export default connect(mapStateToProps)(LessonsContainer)
 
-//  {this.props.lessons.map(lesson => <h5>{lesson.title} ~ {lesson.start}</h5>)}
-//  {this.props.lessons.map(lesson => <h5>{lesson.title} ~ {lesson.start}</h5>)}
