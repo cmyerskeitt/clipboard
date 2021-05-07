@@ -6,8 +6,9 @@ import './Lesson.css'
 class LessonList extends React.Component{
  
         render (){
-                const lessons = this.props.lessons.map(lesson => <LessonCard key={lesson.id} lesson={lesson} />) 
-
+                // const allLessons = this.props.lessons
+                const lessons = this.props.lessons.map(lesson => <LessonCard key={lesson.id} lesson={lesson} />)
+                
         return(
             <ul>
                 <center>
@@ -15,6 +16,7 @@ class LessonList extends React.Component{
                 </center>
                 
             </ul>
+
         )  
     }
 }
@@ -28,3 +30,5 @@ const mapStateToProps = (state) => {
 export default connect(mapStateToProps)(LessonList)
 
 // const lessons = this.props.lessons.map(lesson => <h5>{lesson.title} ~ {lesson.start}~ {lesson.start}</h5>) 
+// const allLessons = this.props.lessons
+//                 const lessons = allLessons.map(lesson => <LessonCard key={lesson.id} lesson={lesson} />)

@@ -22,7 +22,7 @@ class App extends React.Component {
           <HeaderContainer/>
             <Switch>
             <Route path="/lessons/new">
-              <LessonsContainer lessons={this.props.lessons}/>
+              <LessonsContainer />
             </Route>
             <Route path="/lessons">
               <MyCalendar lessons={this.props.lessons} /> 

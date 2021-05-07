@@ -7,10 +7,10 @@ export default function LessonCard(props){
         <div className="lesson-card" >
             <section>
             <h5>
-                {props.lesson.title}
+                {props.lesson[0]}
             </h5>
-                    <b>Start Time </b> {props.lesson.start}<br></br>
-                    <b>End Time </b> {props.lesson.end}
+                    <b>Start Time </b> {props.lesson[1]}<br></br>
+                    <b>End Time </b> {props.lesson[2]}
             </section>
         </div>
 
