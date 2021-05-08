@@ -46,7 +46,7 @@ class MyCalendar extends React.Component {
             endAccessor="end"
             defaultDate={moment().toDate()}
             views={["month", "week", "day"]}
-            defaultView={Views.WEEK}
+            defaultView={Views.MONTH}
             onSelectEvent={this.onLessonClick}
             onSelectSlot={this.handleSelectedSlot}
             style={{ 
