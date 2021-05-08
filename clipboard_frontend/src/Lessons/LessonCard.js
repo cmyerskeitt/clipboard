@@ -2,17 +2,18 @@ import React from 'react'
 
 
 
-export default function LessonCard(props){
+const LessonCard = props => {
     return(
+        // debugger 
         <div className="lesson-card" >
-            <section>
             <h5>
-                {props.lesson[0]}
+                {props.lesson.title}
             </h5>
-                    <b>Start Time </b> {props.lesson[1]}<br></br>
-                    <b>End Time </b> {props.lesson[2]}
-            </section>
+            Start Time: {props.lesson.start.toString()}<br></br>
+            <br></br>
+            End Time: {props.lesson.end.toString()}
         </div>
 
     )
 }
+export default LessonCard

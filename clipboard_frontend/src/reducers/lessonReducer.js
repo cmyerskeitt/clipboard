@@ -9,6 +9,11 @@ export default function lessonReducer(state = {lessons: [], loading: false}, act
      case 'CREATE_LESSON':
          const a = {...action.payload, start: new Date(action.payload.start), end: new Date(action.payload.end)}
          return {...state, lessons: [...state.lessons, a]}
+     case 'DELETE_LESSON':
+            return {
+                ...state,
+                lessons: state.lessons.filter(lesson => lesson !== action.payload)
+            };
      default:
          return state
    }

@@ -3,19 +3,37 @@ import {Calendar, Views, momentLocalizer} from 'react-big-calendar'
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import { connect } from 'react-redux';
 import {createLesson} from "../actions/createLesson"
+import {deleteLesson} from "../actions/deleteLesson"
 import moment from 'moment'
+
 const localizer = momentLocalizer(moment)
+
+
 class MyCalendar extends React.Component {
+
+
   handleSelectedSlot = ({start, end}) => { 
     const title = window.prompt(('New Lesson Title'))
     let event = {title: title, start: start, end: end}
     this.props.createLesson(event)  
-   }
-    onLessonClick = (event) => {
-      window.alert(
-       event.start
-        )
     }
+
+  onLessonClick = (event) => {
+          window.alert(
+           event.start
+            )
+        }
+    // console.log(event)
+    // const r = window.confirm("Would you like to remove this event?")
+    //   if(r === true){
+    //    const events = this.props
+    //    this.props.deleteLesson(event.id)
+    //    return {events}
+      //  How do I get this to rerender?
+    //   }
+   
+    // }
+    
     render(){
       return(
         <div>
@@ -27,8 +45,8 @@ class MyCalendar extends React.Component {
             startAccessor="start"
             endAccessor="end"
             defaultDate={moment().toDate()}
-            views={["month", "day"]}
-            defaultView={Views.MONTH}
+            views={["month", "week", "day"]}
+            defaultView={Views.WEEK}
             onSelectEvent={this.onLessonClick}
             onSelectSlot={this.handleSelectedSlot}
             style={{ 
@@ -41,6 +59,8 @@ class MyCalendar extends React.Component {
 const mapDispatchToProps = (dispatch) => {
   return{
       createLesson: (lesson) => dispatch(createLesson(lesson)),
+      deleteLesson: (lesson) => dispatch(deleteLesson(lesson)),
+      
   }
 }
 export default connect(null, mapDispatchToProps)(MyCalendar)

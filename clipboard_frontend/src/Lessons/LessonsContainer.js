@@ -1,7 +1,7 @@
 import React from "react"
 import {connect} from 'react-redux'
 import LessonInput from '../Lessons/LessonInput'
-// import LessonsList from '../Lessons/LessonsList'
+import LessonsList from '../Lessons/LessonsList'
 
 class LessonsContainer extends React.Component{
     render(){
@@ -9,7 +9,7 @@ class LessonsContainer extends React.Component{
         return(
             <div>
                 <LessonInput />
-                {/* <LessonsList lessons={this.props.lessons}/> */}
+                <LessonsList lessons={this.props.lessons}/>
             </div>
         )
     }
