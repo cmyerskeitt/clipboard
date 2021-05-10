@@ -61,11 +61,6 @@ class LessonInput extends React.Component {
 }
 
   
-//   const mapStateToProps = (state) => {
-//     return {
-//       lessons: state.lessons
-//     }
-//   }
 
 
   const mapDispatchToProps = dispatch => ({

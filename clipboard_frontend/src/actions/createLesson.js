@@ -17,5 +17,4 @@ export const createLesson = (lesson) => {
                 dispatch({type: "CREATE_LESSON", payload: lesson})
             })
     }
-    // return {type: "CREATE_LESSON", lesson}
 }

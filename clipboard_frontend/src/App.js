@@ -5,7 +5,6 @@ import {connect} from 'react-redux'
 import {fetchLessons} from './actions/fetchLessons'
 import HomeContainer from './home/homeContainer';
 import LessonsContainer from './Lessons/LessonsContainer'
-
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 
 class App extends React.Component {
@@ -51,17 +50,3 @@ const mapDispatchToProps = dispatch => ({
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
-// <div className="App">
-// <HeaderContainer/>
-//   <Switch>
-//   <Route path="/lessons/new">
-//     <LessonsContainer lessons={this.props.lessons}/>
-//   </Route>
-//   <Route path="/lessons">
-//     <MyCalendar lessons={this.props.lessons} /> 
-//   </Route>
-//   <Route exact path="/">
-//     <HomeContainer/>
-//   </Route>
-//   </Switch>
-// </div>
