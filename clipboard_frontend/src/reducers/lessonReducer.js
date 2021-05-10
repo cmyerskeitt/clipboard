@@ -1,9 +1,11 @@
+
 export default function lessonReducer(state = {lessons: [], loading: false}, action){
     console.log(action.payload)
    switch (action.type){
      case 'FETCH_LESSONS':
          const l = action.lessons.map(function(a){
              return {...a, start: new Date(a.start), end: new Date(a.end)}
+             
          })
          return {lessons: l}
      case 'CREATE_LESSON':
@@ -13,3 +15,4 @@ export default function lessonReducer(state = {lessons: [], loading: false}, act
          return state
    }
  }
+

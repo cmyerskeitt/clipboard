@@ -27,7 +27,8 @@ class LessonInput extends React.Component {
    
     handleOnSubmit = event => {
         event.preventDefault()
-        const lesson = {...this.state, id: (Math.random)}
+        const lesson = {...this.state, start: new Date(this.state.start), end: new Date(this.state.end), id: (Math.random)}
+       
         this.props.createLesson(lesson)
         console.log(lesson)
         this.setState({
