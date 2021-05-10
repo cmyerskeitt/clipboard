@@ -27842,3 +27842,1293 @@ Processing by Api::V1::LessonsController#create as */*
 Completed 200 OK in 26ms (Views: 1.2ms | ActiveRecord: 7.1ms | Allocations: 2758)
 
 
+Started GET "/api/v1/lessons" for ::1 at 2021-05-09 18:58:37 -0400
+  [1m[35m (3.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::LessonsController#index as */*
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 488)
+
+
+  
+ArgumentError (Unknown key: :presence. Valid keys are: :on, :if, :unless, :prepend. Perhaps you meant to call `validates` instead of `validate`?):
+  
+app/models/lesson.rb:2:in `<class:Lesson>'
+app/models/lesson.rb:1:in `<main>'
+app/controllers/api/v1/lessons_controller.rb:5:in `index'
+Started GET "/api/v1/lessons" for ::1 at 2021-05-09 18:59:03 -0400
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (0.8ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (4.12ms)
+Completed 200 OK in 98ms (Views: 94.9ms | ActiveRecord: 2.3ms | Allocations: 10028)
+
+
+Started GET "/api/v1/lessons" for ::1 at 2021-05-09 19:01:44 -0400
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (0.5ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (3.63ms)
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.5ms | Allocations: 2716)
+
+
+Started GET "/api/v1/lessons" for ::1 at 2021-05-09 19:02:15 -0400
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (0.3ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (3.06ms)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.3ms | Allocations: 2716)
+
+
+Started POST "/api/v1/lessons" for ::1 at 2021-05-09 19:16:11 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::LessonsController#create as */*
+  Parameters: {"title"=>"Intro to Coding", "start"=>"2021-05-09T19:16", "end"=>"2021-05-09T20:16", "lesson"=>{"title"=>"Intro to Coding", "start"=>"2021-05-09T19:16", "end"=>"2021-05-09T20:16"}}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+  [1m[36mLesson Create (3.5ms)[0m  [1m[32mINSERT INTO "lessons" ("title", "start", "end", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Intro to Coding"], ["start", "2021-05-09 19:16:00"], ["end", "2021-05-09 20:16:00"], ["created_at", "2021-05-09 23:16:11.446052"], ["updated_at", "2021-05-09 23:16:11.446052"]]
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+[active_model_serializers] Rendered LessonSerializer with ActiveModelSerializers::Adapter::Attributes (0.66ms)
+Completed 200 OK in 21ms (Views: 1.6ms | ActiveRecord: 6.0ms | Allocations: 3009)
+
+
+Started POST "/api/v1/lessons" for ::1 at 2021-05-09 19:16:57 -0400
+Processing by Api::V1::LessonsController#create as */*
+  Parameters: {"title"=>nil, "start"=>"2021-05-05T05:20:00.000Z", "end"=>"2021-05-05T05:30:00.000Z", "lesson"=>{"title"=>nil, "start"=>"2021-05-05T05:20:00.000Z", "end"=>"2021-05-05T05:30:00.000Z"}}
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+  [1m[36mLesson Create (1.6ms)[0m  [1m[32mINSERT INTO "lessons" ("start", "end", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["start", "2021-05-05 05:20:00"], ["end", "2021-05-05 05:30:00"], ["created_at", "2021-05-09 23:16:57.802314"], ["updated_at", "2021-05-09 23:16:57.802314"]]
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+  [1m[35m (5.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+[active_model_serializers] Rendered LessonSerializer with ActiveModelSerializers::Adapter::Attributes (0.7ms)
+Completed 200 OK in 21ms (Views: 1.6ms | ActiveRecord: 7.2ms | Allocations: 2751)
+
+
+Started POST "/api/v1/lessons" for ::1 at 2021-05-09 19:17:10 -0400
+Processing by Api::V1::LessonsController#create as */*
+  Parameters: {"title"=>nil, "start"=>"2021-05-06T06:00:00.000Z", "end"=>"2021-05-06T06:10:00.000Z", "lesson"=>{"title"=>nil, "start"=>"2021-05-06T06:00:00.000Z", "end"=>"2021-05-06T06:10:00.000Z"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+  [1m[36mLesson Create (1.6ms)[0m  [1m[32mINSERT INTO "lessons" ("start", "end", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["start", "2021-05-06 06:00:00"], ["end", "2021-05-06 06:10:00"], ["created_at", "2021-05-09 23:17:10.103981"], ["updated_at", "2021-05-09 23:17:10.103981"]]
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+  [1m[35m (3.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+[active_model_serializers] Rendered LessonSerializer with ActiveModelSerializers::Adapter::Attributes (0.78ms)
+Completed 200 OK in 17ms (Views: 2.1ms | ActiveRecord: 4.8ms | Allocations: 2750)
+
+
+Started GET "/api/v1/lessons" for ::1 at 2021-05-09 19:17:17 -0400
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (0.4ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (3.01ms)
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 0.4ms | Allocations: 3228)
+
+
+Started POST "/api/v1/lessons" for ::1 at 2021-05-09 19:17:45 -0400
+Processing by Api::V1::LessonsController#create as */*
+  Parameters: {"title"=>nil, "start"=>"2021-05-05T07:10:00.000Z", "end"=>"2021-05-05T07:20:00.000Z", "lesson"=>{"title"=>nil, "start"=>"2021-05-05T07:10:00.000Z", "end"=>"2021-05-05T07:20:00.000Z"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+  [1m[36mLesson Create (1.8ms)[0m  [1m[32mINSERT INTO "lessons" ("start", "end", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["start", "2021-05-05 07:10:00"], ["end", "2021-05-05 07:20:00"], ["created_at", "2021-05-09 23:17:45.604733"], ["updated_at", "2021-05-09 23:17:45.604733"]]
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+[active_model_serializers] Rendered LessonSerializer with ActiveModelSerializers::Adapter::Attributes (0.49ms)
+Completed 200 OK in 16ms (Views: 1.5ms | ActiveRecord: 4.5ms | Allocations: 2750)
+
+
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mLesson Load (0.7ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/api/v1/lessons" for ::1 at 2021-05-09 19:19:52 -0400
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (0.6ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (4.21ms)
+Completed 200 OK in 32ms (Views: 24.2ms | ActiveRecord: 1.4ms | Allocations: 9620)
+
+
+Started POST "/api/v1/lessons" for ::1 at 2021-05-09 19:20:06 -0400
+Processing by Api::V1::LessonsController#create as */*
+  Parameters: {"title"=>nil, "start"=>"2021-05-04T08:00:00.000Z", "end"=>"2021-05-04T08:10:00.000Z", "lesson"=>{"title"=>nil, "start"=>"2021-05-04T08:00:00.000Z", "end"=>"2021-05-04T08:10:00.000Z"}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 200 OK in 63ms (Views: 5.7ms | ActiveRecord: 0.0ms | Allocations: 4917)
+
+
+Started POST "/api/v1/lessons" for ::1 at 2021-05-09 19:20:11 -0400
+Processing by Api::V1::LessonsController#create as */*
+  Parameters: {"title"=>nil, "start"=>"2021-05-04T07:10:00.000Z", "end"=>"2021-05-04T07:20:00.000Z", "lesson"=>{"title"=>nil, "start"=>"2021-05-04T07:10:00.000Z", "end"=>"2021-05-04T07:20:00.000Z"}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.27ms)
+Completed 200 OK in 8ms (Views: 1.1ms | ActiveRecord: 0.0ms | Allocations: 1240)
+
+
+Started POST "/api/v1/lessons" for ::1 at 2021-05-09 19:20:16 -0400
+Processing by Api::V1::LessonsController#create as */*
+  Parameters: {"title"=>nil, "start"=>"2021-05-04T07:10:00.000Z", "end"=>"2021-05-04T08:20:00.000Z", "lesson"=>{"title"=>nil, "start"=>"2021-05-04T07:10:00.000Z", "end"=>"2021-05-04T08:20:00.000Z"}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+Completed 200 OK in 12ms (Views: 2.0ms | ActiveRecord: 0.0ms | Allocations: 1240)
+
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "lessons"[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "lessons" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "start" datetime, "end" datetime, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20210422231216)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-05-09 23:20:37.404481"], ["updated_at", "2021-05-09 23:20:37.404481"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "cc7b66cfd0aee607f351750f150bf4bcf6bbfebe"], ["created_at", "2021-05-09 23:20:37.413723"], ["updated_at", "2021-05-09 23:20:37.413723"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "lessons"[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "lessons" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "start" datetime, "end" datetime, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20210422231216)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-05-09 23:20:37.433857"], ["updated_at", "2021-05-09 23:20:37.433857"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.4ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2021-05-09 23:20:37.440310"], ["key", "environment"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "cc7b66cfd0aee607f351750f150bf4bcf6bbfebe"], ["created_at", "2021-05-09 23:20:37.446347"], ["updated_at", "2021-05-09 23:20:37.446347"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLesson Create (0.3ms)[0m  [1m[32mINSERT INTO "lessons" ("title", "start", "end", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Intro to Poetry - Rhyming"], ["start", "2019-04-19 08:00:00"], ["end", "2019-04-19 10:00:00"], ["created_at", "2021-05-09 23:20:37.464933"], ["updated_at", "2021-05-09 23:20:37.464933"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLesson Create (0.3ms)[0m  [1m[32mINSERT INTO "lessons" ("title", "start", "end", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Intro to Poetry - Alliteration"], ["start", "2019-04-19 12:00:00"], ["end", "2019-04-19 14:00:00"], ["created_at", "2021-05-09 23:20:37.469738"], ["updated_at", "2021-05-09 23:20:37.469738"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/api/v1/lessons" for ::1 at 2021-05-09 19:21:11 -0400
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (0.8ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.15ms)
+Completed 200 OK in 36ms (Views: 25.1ms | ActiveRecord: 2.0ms | Allocations: 7515)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "lessons"[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "lessons" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "start" datetime, "end" datetime, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20210422231216)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-05-09 23:21:54.383167"], ["updated_at", "2021-05-09 23:21:54.383167"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "cc7b66cfd0aee607f351750f150bf4bcf6bbfebe"], ["created_at", "2021-05-09 23:21:54.392213"], ["updated_at", "2021-05-09 23:21:54.392213"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "lessons"[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "lessons" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "start" datetime, "end" datetime, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20210422231216)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-05-09 23:21:54.427914"], ["updated_at", "2021-05-09 23:21:54.427914"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.3ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2021-05-09 23:21:54.434222"], ["key", "environment"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "cc7b66cfd0aee607f351750f150bf4bcf6bbfebe"], ["created_at", "2021-05-09 23:21:54.440434"], ["updated_at", "2021-05-09 23:21:54.440434"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLesson Create (0.4ms)[0m  [1m[32mINSERT INTO "lessons" ("title", "start", "end", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Intro to Poetry - Rhyming"], ["start", "2021-04-19 08:00:00"], ["end", "2021-04-19 10:00:00"], ["created_at", "2021-05-09 23:21:54.457207"], ["updated_at", "2021-05-09 23:21:54.457207"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLesson Create (0.3ms)[0m  [1m[32mINSERT INTO "lessons" ("title", "start", "end", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Intro to Poetry - Alliteration"], ["start", "2021-04-19 12:00:00"], ["end", "2021-04-19 14:00:00"], ["created_at", "2021-05-09 23:21:54.461676"], ["updated_at", "2021-05-09 23:21:54.461676"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/api/v1/lessons" for ::1 at 2021-05-09 19:22:05 -0400
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (0.4ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.45ms)
+Completed 200 OK in 21ms (Views: 17.8ms | ActiveRecord: 1.5ms | Allocations: 7514)
+
+
+Started POST "/api/v1/lessons" for ::1 at 2021-05-09 19:23:40 -0400
+Processing by Api::V1::LessonsController#create as */*
+  Parameters: {"title"=>"Intro to Coding", "start"=>"2021-05-10T08:30", "end"=>"2021-05-10T09:30", "lesson"=>{"title"=>"Intro to Coding", "start"=>"2021-05-10T08:30", "end"=>"2021-05-10T09:30"}}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+  [1m[36mLesson Create (2.7ms)[0m  [1m[32mINSERT INTO "lessons" ("title", "start", "end", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Intro to Coding"], ["start", "2021-05-10 08:30:00"], ["end", "2021-05-10 09:30:00"], ["created_at", "2021-05-09 23:23:40.227517"], ["updated_at", "2021-05-09 23:23:40.227517"]]
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+[active_model_serializers] Rendered LessonSerializer with ActiveModelSerializers::Adapter::Attributes (0.53ms)
+Completed 200 OK in 25ms (Views: 1.3ms | ActiveRecord: 4.6ms | Allocations: 3053)
+
+
+Started POST "/api/v1/lessons" for ::1 at 2021-05-09 19:24:09 -0400
+Processing by Api::V1::LessonsController#create as */*
+  Parameters: {"title"=>"Intro to Context Clues", "start"=>"2021-05-12T05:20:00.000Z", "end"=>"2021-05-12T06:40:00.000Z", "lesson"=>{"title"=>"Intro to Context Clues", "start"=>"2021-05-12T05:20:00.000Z", "end"=>"2021-05-12T06:40:00.000Z"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+  [1m[36mLesson Create (1.2ms)[0m  [1m[32mINSERT INTO "lessons" ("title", "start", "end", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Intro to Context Clues"], ["start", "2021-05-12 05:20:00"], ["end", "2021-05-12 06:40:00"], ["created_at", "2021-05-09 23:24:09.772631"], ["updated_at", "2021-05-09 23:24:09.772631"]]
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+  [1m[35m (3.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+[active_model_serializers] Rendered LessonSerializer with ActiveModelSerializers::Adapter::Attributes (0.75ms)
+Completed 200 OK in 19ms (Views: 1.6ms | ActiveRecord: 4.9ms | Allocations: 2799)
+
+
+Started DELETE "/api/v1/lessons/4" for ::1 at 2021-05-09 19:28:13 -0400
+Processing by Api::V1::LessonsController#destroy as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mLesson Load (1.8ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/lessons_controller.rb:35:in `destroy'
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:36:in `destroy'
+  [1m[36mLesson Destroy (0.9ms)[0m  [1m[31mDELETE FROM "lessons" WHERE "lessons"."id" = ?[0m  [["id", 4]]
+  ↳ app/controllers/api/v1/lessons_controller.rb:36:in `destroy'
+  [1m[35m (5.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:36:in `destroy'
+[active_model_serializers] Rendered LessonSerializer with ActiveModelSerializers::Adapter::Attributes (0.84ms)
+Completed 200 OK in 47ms (Views: 2.6ms | ActiveRecord: 8.3ms | Allocations: 4587)
+
+
+Started GET "/api/v1/lessons" for ::1 at 2021-05-09 19:28:19 -0400
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (0.3ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.78ms)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.3ms | Allocations: 1504)
+
+
+Started DELETE "/api/v1/lessons/3" for ::1 at 2021-05-09 19:28:32 -0400
+Processing by Api::V1::LessonsController#destroy as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mLesson Load (1.2ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/lessons_controller.rb:35:in `destroy'
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:36:in `destroy'
+  [1m[36mLesson Destroy (1.0ms)[0m  [1m[31mDELETE FROM "lessons" WHERE "lessons"."id" = ?[0m  [["id", 3]]
+  ↳ app/controllers/api/v1/lessons_controller.rb:36:in `destroy'
+  [1m[35m (11.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:36:in `destroy'
+[active_model_serializers] Rendered LessonSerializer with ActiveModelSerializers::Adapter::Attributes (0.81ms)
+Completed 200 OK in 24ms (Views: 2.0ms | ActiveRecord: 14.2ms | Allocations: 2661)
+
+
+Started POST "/api/v1/lessons" for ::1 at 2021-05-09 19:28:36 -0400
+Processing by Api::V1::LessonsController#create as */*
+  Parameters: {"title"=>nil, "start"=>"2021-05-11T04:00:00.000Z", "end"=>"2021-05-11T04:00:00.000Z", "lesson"=>{"title"=>nil, "start"=>"2021-05-11T04:00:00.000Z", "end"=>"2021-05-11T04:00:00.000Z"}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.08ms)
+Completed 200 OK in 23ms (Views: 3.9ms | ActiveRecord: 0.0ms | Allocations: 2873)
+
+
+Started DELETE "/api/v1/lessons/3" for ::1 at 2021-05-09 19:28:44 -0400
+Processing by Api::V1::LessonsController#destroy as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mLesson Load (0.3ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/lessons_controller.rb:35:in `destroy'
+Completed 404 Not Found in 3ms (ActiveRecord: 0.3ms | Allocations: 614)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Lesson with 'id'=3):
+  
+app/controllers/api/v1/lessons_controller.rb:35:in `destroy'
+Started DELETE "/api/v1/lessons/3" for ::1 at 2021-05-09 19:28:53 -0400
+Processing by Api::V1::LessonsController#destroy as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mLesson Load (0.3ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/lessons_controller.rb:35:in `destroy'
+Completed 404 Not Found in 4ms (ActiveRecord: 0.3ms | Allocations: 606)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Lesson with 'id'=3):
+  
+app/controllers/api/v1/lessons_controller.rb:35:in `destroy'
+Started GET "/api/v1/lessons" for ::1 at 2021-05-09 19:28:59 -0400
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (0.2ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.09ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.2ms | Allocations: 1311)
+
+
+Started POST "/api/v1/lessons" for ::1 at 2021-05-09 19:32:26 -0400
+Processing by Api::V1::LessonsController#create as */*
+  Parameters: {"title"=>"Intro to Coding", "start"=>"2021-05-09T19:30", "end"=>"2021-05-09T20:30", "lesson"=>{"title"=>"Intro to Coding", "start"=>"2021-05-09T19:30", "end"=>"2021-05-09T20:30"}}
+  [1m[35m (0.6ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+  [1m[36mLesson Create (1.6ms)[0m  [1m[32mINSERT INTO "lessons" ("title", "start", "end", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Intro to Coding"], ["start", "2021-05-09 19:30:00"], ["end", "2021-05-09 20:30:00"], ["created_at", "2021-05-09 23:32:26.475005"], ["updated_at", "2021-05-09 23:32:26.475005"]]
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+[active_model_serializers] Rendered LessonSerializer with ActiveModelSerializers::Adapter::Attributes (4.47ms)
+Completed 200 OK in 40ms (Views: 10.4ms | ActiveRecord: 4.2ms | Allocations: 2776)
+
+
+Started DELETE "/api/v1/lessons/5" for ::1 at 2021-05-09 19:32:33 -0400
+Processing by Api::V1::LessonsController#destroy as */*
+  Parameters: {"id"=>"5"}
+  [1m[36mLesson Load (0.5ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/lessons_controller.rb:35:in `destroy'
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:36:in `destroy'
+  [1m[36mLesson Destroy (2.1ms)[0m  [1m[31mDELETE FROM "lessons" WHERE "lessons"."id" = ?[0m  [["id", 5]]
+  ↳ app/controllers/api/v1/lessons_controller.rb:36:in `destroy'
+  [1m[35m (9.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:36:in `destroy'
+[active_model_serializers] Rendered LessonSerializer with ActiveModelSerializers::Adapter::Attributes (0.85ms)
+Completed 200 OK in 30ms (Views: 2.0ms | ActiveRecord: 12.8ms | Allocations: 2664)
+
+
+Started POST "/api/v1/lessons" for ::1 at 2021-05-09 19:33:06 -0400
+Processing by Api::V1::LessonsController#create as */*
+  Parameters: {"title"=>"Another Title Again", "start"=>"2021-05-09T19:33", "end"=>"2021-05-09T20:33", "lesson"=>{"title"=>"Another Title Again", "start"=>"2021-05-09T19:33", "end"=>"2021-05-09T20:33"}}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+  [1m[36mLesson Create (1.2ms)[0m  [1m[32mINSERT INTO "lessons" ("title", "start", "end", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Another Title Again"], ["start", "2021-05-09 19:33:00"], ["end", "2021-05-09 20:33:00"], ["created_at", "2021-05-09 23:33:06.693937"], ["updated_at", "2021-05-09 23:33:06.693937"]]
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+  [1m[35m (4.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+[active_model_serializers] Rendered LessonSerializer with ActiveModelSerializers::Adapter::Attributes (0.8ms)
+Completed 200 OK in 18ms (Views: 2.2ms | ActiveRecord: 5.7ms | Allocations: 2774)
+
+
+Started DELETE "/api/v1/lessons/6" for ::1 at 2021-05-09 19:33:12 -0400
+Processing by Api::V1::LessonsController#destroy as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mLesson Load (0.3ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/lessons_controller.rb:35:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:36:in `destroy'
+  [1m[36mLesson Destroy (2.5ms)[0m  [1m[31mDELETE FROM "lessons" WHERE "lessons"."id" = ?[0m  [["id", 6]]
+  ↳ app/controllers/api/v1/lessons_controller.rb:36:in `destroy'
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:36:in `destroy'
+[active_model_serializers] Rendered LessonSerializer with ActiveModelSerializers::Adapter::Attributes (0.48ms)
+Completed 200 OK in 127ms (Views: 1.0ms | ActiveRecord: 4.0ms | Allocations: 2666)
+
+
+Started DELETE "/api/v1/lessons/6" for ::1 at 2021-05-09 19:33:29 -0400
+Processing by Api::V1::LessonsController#destroy as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mLesson Load (0.8ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/lessons_controller.rb:35:in `destroy'
+Completed 404 Not Found in 5ms (ActiveRecord: 0.8ms | Allocations: 607)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Lesson with 'id'=6):
+  
+app/controllers/api/v1/lessons_controller.rb:35:in `destroy'
+Started GET "/api/v1/lessons" for ::1 at 2021-05-09 19:34:33 -0400
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (0.4ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.0ms)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.4ms | Allocations: 1312)
+
+
+Started GET "/api/v1/lessons" for ::1 at 2021-05-09 19:34:38 -0400
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (0.2ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.98ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.2ms | Allocations: 1313)
+
+
+Started GET "/api/v1/lessons" for ::1 at 2021-05-09 19:44:32 -0400
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (4.4ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (30.2ms)
+Completed 200 OK in 72ms (Views: 62.1ms | ActiveRecord: 4.4ms | Allocations: 1332)
+
+
+Started GET "/api/v1/lessons" for ::1 at 2021-05-09 19:47:10 -0400
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (0.3ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.3ms)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.3ms | Allocations: 1312)
+
+
+Started POST "/api/v1/lessons" for ::1 at 2021-05-09 19:47:21 -0400
+Processing by Api::V1::LessonsController#create as */*
+  Parameters: {"title"=>"Intro to Coding", "start"=>"2021-05-09T19:47", "end"=>"2021-05-09T21:47", "lesson"=>{"title"=>"Intro to Coding", "start"=>"2021-05-09T19:47", "end"=>"2021-05-09T21:47"}}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+  [1m[36mLesson Create (8.6ms)[0m  [1m[32mINSERT INTO "lessons" ("title", "start", "end", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Intro to Coding"], ["start", "2021-05-09 19:47:00"], ["end", "2021-05-09 21:47:00"], ["created_at", "2021-05-09 23:47:21.971472"], ["updated_at", "2021-05-09 23:47:21.971472"]]
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+  [1m[35m (14.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+[active_model_serializers] Rendered LessonSerializer with ActiveModelSerializers::Adapter::Attributes (0.77ms)
+Completed 200 OK in 58ms (Views: 1.6ms | ActiveRecord: 23.4ms | Allocations: 2774)
+
+
+Started GET "/api/v1/lessons" for ::1 at 2021-05-09 19:47:33 -0400
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (0.3ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (3.68ms)
+Completed 200 OK in 9ms (Views: 8.8ms | ActiveRecord: 0.3ms | Allocations: 1488)
+
+
+Started GET "/api/v1/lessons" for ::1 at 2021-05-09 19:54:21 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (2.0ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.52ms)
+Completed 200 OK in 7ms (Views: 4.5ms | ActiveRecord: 2.0ms | Allocations: 1506)
+
+
+Started GET "/api/v1/lessons" for ::1 at 2021-05-09 19:54:30 -0400
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (1.0ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.52ms)
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 1.0ms | Allocations: 1486)
+
+
+Started GET "/api/v1/lessons" for ::1 at 2021-05-09 19:55:15 -0400
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (0.3ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.9ms)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.3ms | Allocations: 1486)
+
+
+Started GET "/api/v1/lessons" for ::1 at 2021-05-09 19:59:27 -0400
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (0.2ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.42ms)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.2ms | Allocations: 1486)
+
+
+Started GET "/api/v1/lessons" for ::1 at 2021-05-09 19:59:31 -0400
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (0.3ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.33ms)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.3ms | Allocations: 1486)
+
+
+Started POST "/api/v1/lessons" for ::1 at 2021-05-09 19:59:42 -0400
+Processing by Api::V1::LessonsController#create as */*
+  Parameters: {"title"=>"Intro to Coding", "start"=>"2021-05-09T19:59", "end"=>"2021-05-09T21:59", "lesson"=>{"title"=>"Intro to Coding", "start"=>"2021-05-09T19:59", "end"=>"2021-05-09T21:59"}}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+  [1m[36mLesson Create (7.2ms)[0m  [1m[32mINSERT INTO "lessons" ("title", "start", "end", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Intro to Coding"], ["start", "2021-05-09 19:59:00"], ["end", "2021-05-09 21:59:00"], ["created_at", "2021-05-09 23:59:42.691224"], ["updated_at", "2021-05-09 23:59:42.691224"]]
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+  [1m[35m (9.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+[active_model_serializers] Rendered LessonSerializer with ActiveModelSerializers::Adapter::Attributes (0.51ms)
+Completed 200 OK in 31ms (Views: 1.1ms | ActiveRecord: 16.9ms | Allocations: 2774)
+
+
+Started GET "/api/v1/lessons" for ::1 at 2021-05-09 20:02:53 -0400
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (1.1ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.01ms)
+Completed 200 OK in 7ms (Views: 5.2ms | ActiveRecord: 1.1ms | Allocations: 1663)
+
+
+Started DELETE "/api/v1/lessons/8" for ::1 at 2021-05-09 20:02:56 -0400
+Processing by Api::V1::LessonsController#destroy as */*
+  Parameters: {"id"=>"8"}
+  [1m[36mLesson Load (0.6ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/lessons_controller.rb:35:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:36:in `destroy'
+  [1m[36mLesson Destroy (1.0ms)[0m  [1m[31mDELETE FROM "lessons" WHERE "lessons"."id" = ?[0m  [["id", 8]]
+  ↳ app/controllers/api/v1/lessons_controller.rb:36:in `destroy'
+  [1m[35m (4.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:36:in `destroy'
+[active_model_serializers] Rendered LessonSerializer with ActiveModelSerializers::Adapter::Attributes (0.84ms)
+Completed 200 OK in 21ms (Views: 1.8ms | ActiveRecord: 5.8ms | Allocations: 2678)
+
+
+Started DELETE "/api/v1/lessons/8" for ::1 at 2021-05-09 20:02:59 -0400
+Processing by Api::V1::LessonsController#destroy as */*
+  Parameters: {"id"=>"8"}
+  [1m[36mLesson Load (0.3ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/lessons_controller.rb:35:in `destroy'
+Completed 404 Not Found in 5ms (ActiveRecord: 0.3ms | Allocations: 607)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Lesson with 'id'=8):
+  
+app/controllers/api/v1/lessons_controller.rb:35:in `destroy'
+Started DELETE "/api/v1/lessons/8" for ::1 at 2021-05-09 20:03:03 -0400
+Processing by Api::V1::LessonsController#destroy as */*
+  Parameters: {"id"=>"8"}
+  [1m[36mLesson Load (0.3ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/lessons_controller.rb:35:in `destroy'
+Completed 404 Not Found in 3ms (ActiveRecord: 0.3ms | Allocations: 606)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Lesson with 'id'=8):
+  
+app/controllers/api/v1/lessons_controller.rb:35:in `destroy'
+Started GET "/api/v1/lessons" for ::1 at 2021-05-09 20:03:06 -0400
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (0.2ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.56ms)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.2ms | Allocations: 1485)
+
+
+Started DELETE "/api/v1/lessons/7" for ::1 at 2021-05-09 20:03:20 -0400
+Processing by Api::V1::LessonsController#destroy as */*
+  Parameters: {"id"=>"7"}
+  [1m[36mLesson Load (0.5ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/lessons_controller.rb:35:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:36:in `destroy'
+  [1m[36mLesson Destroy (0.9ms)[0m  [1m[31mDELETE FROM "lessons" WHERE "lessons"."id" = ?[0m  [["id", 7]]
+  ↳ app/controllers/api/v1/lessons_controller.rb:36:in `destroy'
+  [1m[35m (4.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:36:in `destroy'
+[active_model_serializers] Rendered LessonSerializer with ActiveModelSerializers::Adapter::Attributes (1.05ms)
+Completed 200 OK in 15ms (Views: 2.1ms | ActiveRecord: 5.8ms | Allocations: 2661)
+
+
+Started GET "/api/v1/lessons" for ::1 at 2021-05-09 20:03:28 -0400
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (0.3ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.0ms)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.3ms | Allocations: 1312)
+
+
+Started GET "/api/v1/lessons" for ::1 at 2021-05-09 20:10:45 -0400
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (3.4ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (12.83ms)
+Completed 200 OK in 47ms (Views: 35.2ms | ActiveRecord: 3.4ms | Allocations: 1332)
+
+
+Started GET "/api/v1/lessons" for ::1 at 2021-05-09 20:11:58 -0400
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (0.2ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.87ms)
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.2ms | Allocations: 1312)
+
+
+Started POST "/api/v1/lessons" for ::1 at 2021-05-09 20:13:10 -0400
+Processing by Api::V1::LessonsController#create as */*
+  Parameters: {"title"=>"Intro to Coding", "start"=>"2021-05-09T20:12", "end"=>"2021-05-09T20:12", "lesson"=>{"title"=>"Intro to Coding", "start"=>"2021-05-09T20:12", "end"=>"2021-05-09T20:12"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+  [1m[36mLesson Create (8.4ms)[0m  [1m[32mINSERT INTO "lessons" ("title", "start", "end", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Intro to Coding"], ["start", "2021-05-09 20:12:00"], ["end", "2021-05-09 20:12:00"], ["created_at", "2021-05-10 00:13:10.902673"], ["updated_at", "2021-05-10 00:13:10.902673"]]
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+  [1m[35m (6.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+[active_model_serializers] Rendered LessonSerializer with ActiveModelSerializers::Adapter::Attributes (0.69ms)
+Completed 200 OK in 26ms (Views: 1.7ms | ActiveRecord: 14.9ms | Allocations: 2774)
+
+
+Started GET "/api/v1/lessons" for ::1 at 2021-05-10 08:46:35 -0400
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (0.8ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (12.3ms)
+Completed 200 OK in 53ms (Views: 45.9ms | ActiveRecord: 0.8ms | Allocations: 1506)
+
+
+Started POST "/api/v1/lessons" for ::1 at 2021-05-10 08:47:27 -0400
+Processing by Api::V1::LessonsController#create as */*
+  Parameters: {"title"=>"Intro to Geometry ", "start"=>"2021-05-10T09:00", "end"=>"2021-05-10T10:00", "lesson"=>{"title"=>"Intro to Geometry ", "start"=>"2021-05-10T09:00", "end"=>"2021-05-10T10:00"}}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+  [1m[36mLesson Create (1.1ms)[0m  [1m[32mINSERT INTO "lessons" ("title", "start", "end", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Intro to Geometry "], ["start", "2021-05-10 09:00:00"], ["end", "2021-05-10 10:00:00"], ["created_at", "2021-05-10 12:47:27.442638"], ["updated_at", "2021-05-10 12:47:27.442638"]]
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+[active_model_serializers] Rendered LessonSerializer with ActiveModelSerializers::Adapter::Attributes (0.67ms)
+Completed 200 OK in 30ms (Views: 5.7ms | ActiveRecord: 3.1ms | Allocations: 2776)
+
+
+Started GET "/api/v1/lessons" for ::1 at 2021-05-10 08:47:46 -0400
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (0.3ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.67ms)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.3ms | Allocations: 1663)
+
+
+Started GET "/api/v1/lessons" for ::1 at 2021-05-10 09:03:51 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (4.2ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.95ms)
+Completed 200 OK in 13ms (Views: 7.6ms | ActiveRecord: 4.2ms | Allocations: 1681)
+
+
+Started GET "/api/v1/lessons" for ::1 at 2021-05-10 09:23:41 -0400
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (1.3ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (6.85ms)
+Completed 200 OK in 21ms (Views: 15.6ms | ActiveRecord: 1.3ms | Allocations: 1684)
+
+
+Started GET "/api/v1/lessons" for ::1 at 2021-05-10 09:28:42 -0400
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (0.3ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.62ms)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.3ms | Allocations: 1661)
+
+
+Started POST "/api/v1/lessons" for ::1 at 2021-05-10 09:29:15 -0400
+Processing by Api::V1::LessonsController#create as */*
+  Parameters: {"title"=>"New Title ", "start"=>"2021-05-10T09:30", "end"=>"2021-05-10T10:30", "lesson"=>{"title"=>"New Title ", "start"=>"2021-05-10T09:30", "end"=>"2021-05-10T10:30"}}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+  [1m[36mLesson Create (3.2ms)[0m  [1m[32mINSERT INTO "lessons" ("title", "start", "end", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "New Title "], ["start", "2021-05-10 09:30:00"], ["end", "2021-05-10 10:30:00"], ["created_at", "2021-05-10 13:29:15.955717"], ["updated_at", "2021-05-10 13:29:15.955717"]]
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+[active_model_serializers] Rendered LessonSerializer with ActiveModelSerializers::Adapter::Attributes (0.79ms)
+Completed 200 OK in 19ms (Views: 1.7ms | ActiveRecord: 5.4ms | Allocations: 2774)
+
+
+Started GET "/api/v1/lessons" for ::1 at 2021-05-10 09:43:01 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (0.8ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.41ms)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.8ms | Allocations: 1855)
+
+
+Started GET "/api/v1/lessons" for ::1 at 2021-05-10 09:43:06 -0400
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (0.2ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.69ms)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.2ms | Allocations: 1835)
+
+
+Started GET "/api/v1/lessons" for ::1 at 2021-05-10 09:43:41 -0400
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (0.2ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.37ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.2ms | Allocations: 1835)
+
+
+Started GET "/api/v1/lessons" for ::1 at 2021-05-10 09:48:45 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (1.3ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (9.25ms)
+Completed 200 OK in 40ms (Views: 32.6ms | ActiveRecord: 1.3ms | Allocations: 1855)
+
+
+Started GET "/api/v1/lessons" for ::1 at 2021-05-10 09:48:49 -0400
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (0.3ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.96ms)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.3ms | Allocations: 1835)
+
+
+Started GET "/api/v1/lessons" for ::1 at 2021-05-10 09:49:17 -0400
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (0.3ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.06ms)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.3ms | Allocations: 1835)
+
+
+Started GET "/api/v1/lessons" for ::1 at 2021-05-10 09:50:46 -0400
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (0.3ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (3.35ms)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.3ms | Allocations: 1835)
+
+
+Started POST "/api/v1/lessons" for ::1 at 2021-05-10 09:51:26 -0400
+Processing by Api::V1::LessonsController#create as */*
+  Parameters: {"title"=>"mnblnmbjh", "start"=>"2021-05-12T14:20:00.000Z", "end"=>"2021-05-12T15:30:00.000Z", "lesson"=>{"title"=>"mnblnmbjh", "start"=>"2021-05-12T14:20:00.000Z", "end"=>"2021-05-12T15:30:00.000Z"}}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+  [1m[36mLesson Create (2.6ms)[0m  [1m[32mINSERT INTO "lessons" ("title", "start", "end", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "mnblnmbjh"], ["start", "2021-05-12 14:20:00"], ["end", "2021-05-12 15:30:00"], ["created_at", "2021-05-10 13:51:26.049872"], ["updated_at", "2021-05-10 13:51:26.049872"]]
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+  [1m[35m (3.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+[active_model_serializers] Rendered LessonSerializer with ActiveModelSerializers::Adapter::Attributes (1.35ms)
+Completed 200 OK in 31ms (Views: 4.0ms | ActiveRecord: 5.9ms | Allocations: 2782)
+
+
+Started POST "/api/v1/lessons" for ::1 at 2021-05-10 09:51:59 -0400
+Processing by Api::V1::LessonsController#create as */*
+  Parameters: {"title"=>"nbm.knm", "start"=>"2021-05-10T09:00", "end"=>"2021-05-10T10:00", "lesson"=>{"title"=>"nbm.knm", "start"=>"2021-05-10T09:00", "end"=>"2021-05-10T10:00"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+  [1m[36mLesson Create (2.5ms)[0m  [1m[32mINSERT INTO "lessons" ("title", "start", "end", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "nbm.knm"], ["start", "2021-05-10 09:00:00"], ["end", "2021-05-10 10:00:00"], ["created_at", "2021-05-10 13:51:59.672230"], ["updated_at", "2021-05-10 13:51:59.672230"]]
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+[active_model_serializers] Rendered LessonSerializer with ActiveModelSerializers::Adapter::Attributes (0.95ms)
+Completed 200 OK in 23ms (Views: 2.1ms | ActiveRecord: 5.1ms | Allocations: 2776)
+
+
+Started GET "/api/v1/lessons" for ::1 at 2021-05-10 09:56:15 -0400
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (4.6ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.5ms)
+Completed 200 OK in 10ms (Views: 5.3ms | ActiveRecord: 4.6ms | Allocations: 2185)
+
+
+Started GET "/api/v1/lessons" for ::1 at 2021-05-10 09:56:24 -0400
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (0.3ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.06ms)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.3ms | Allocations: 2183)
+
+
+Started GET "/api/v1/lessons" for ::1 at 2021-05-10 09:57:56 -0400
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (0.2ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.19ms)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.2ms | Allocations: 2183)
+
+
+Started GET "/api/v1/lessons" for ::1 at 2021-05-10 09:57:59 -0400
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (0.2ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.96ms)
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.2ms | Allocations: 2183)
+
+
+Started GET "/api/v1/lessons" for ::1 at 2021-05-10 09:58:18 -0400
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (0.2ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.52ms)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.2ms | Allocations: 2183)
+
+
+Started GET "/api/v1/lessons" for ::1 at 2021-05-10 09:59:12 -0400
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (0.4ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.98ms)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.4ms | Allocations: 2183)
+
+
+Started GET "/api/v1/lessons" for ::1 at 2021-05-10 09:59:25 -0400
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (0.2ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.78ms)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.2ms | Allocations: 2183)
+
+
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "lessons"[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE TABLE "lessons" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "start" datetime, "end" datetime, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20210422231216)[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-05-10 13:59:46.167324"], ["updated_at", "2021-05-10 13:59:46.167324"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "cc7b66cfd0aee607f351750f150bf4bcf6bbfebe"], ["created_at", "2021-05-10 13:59:46.177738"], ["updated_at", "2021-05-10 13:59:46.177738"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "lessons"[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "lessons" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "start" datetime, "end" datetime, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20210422231216)[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-05-10 13:59:46.200596"], ["updated_at", "2021-05-10 13:59:46.200596"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.4ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2021-05-10 13:59:46.213227"], ["key", "environment"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "cc7b66cfd0aee607f351750f150bf4bcf6bbfebe"], ["created_at", "2021-05-10 13:59:46.225269"], ["updated_at", "2021-05-10 13:59:46.225269"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLesson Create (0.3ms)[0m  [1m[32mINSERT INTO "lessons" ("title", "start", "end", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Intro to Poetry - Rhyming"], ["start", "2021-04-19 08:00:00"], ["end", "2021-04-19 10:00:00"], ["created_at", "2021-05-10 13:59:46.260134"], ["updated_at", "2021-05-10 13:59:46.260134"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLesson Create (0.6ms)[0m  [1m[32mINSERT INTO "lessons" ("title", "start", "end", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Intro to Poetry - Alliteration"], ["start", "2021-04-19 12:00:00"], ["end", "2021-04-19 14:00:00"], ["created_at", "2021-05-10 13:59:46.263909"], ["updated_at", "2021-05-10 13:59:46.263909"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/api/v1/lessons" for ::1 at 2021-05-10 10:00:07 -0400
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (0.6ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.7ms)
+Completed 200 OK in 42ms (Views: 23.3ms | ActiveRecord: 2.2ms | Allocations: 7521)
+
+
+Started POST "/api/v1/lessons" for ::1 at 2021-05-10 10:00:22 -0400
+Processing by Api::V1::LessonsController#create as */*
+  Parameters: {"title"=>"Intro to Coding", "start"=>"2021-05-10T10:00", "end"=>"2021-05-10T11:00", "lesson"=>{"title"=>"Intro to Coding", "start"=>"2021-05-10T10:00", "end"=>"2021-05-10T11:00"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+  [1m[36mLesson Create (4.6ms)[0m  [1m[32mINSERT INTO "lessons" ("title", "start", "end", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Intro to Coding"], ["start", "2021-05-10 10:00:00"], ["end", "2021-05-10 11:00:00"], ["created_at", "2021-05-10 14:00:22.432071"], ["updated_at", "2021-05-10 14:00:22.432071"]]
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+[active_model_serializers] Rendered LessonSerializer with ActiveModelSerializers::Adapter::Attributes (0.7ms)
+Completed 200 OK in 24ms (Views: 3.6ms | ActiveRecord: 6.5ms | Allocations: 3053)
+
+
+Started GET "/api/v1/lessons" for ::1 at 2021-05-10 10:01:26 -0400
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (0.2ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.01ms)
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.2ms | Allocations: 1506)
+
+
+Started POST "/api/v1/lessons" for ::1 at 2021-05-10 10:01:49 -0400
+Processing by Api::V1::LessonsController#create as */*
+  Parameters: {"title"=>"Intro to Coding", "start"=>"2021-05-10T10:00", "end"=>"2021-05-10T11:01", "lesson"=>{"title"=>"Intro to Coding", "start"=>"2021-05-10T10:00", "end"=>"2021-05-10T11:01"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+  [1m[36mLesson Create (1.8ms)[0m  [1m[32mINSERT INTO "lessons" ("title", "start", "end", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Intro to Coding"], ["start", "2021-05-10 10:00:00"], ["end", "2021-05-10 11:01:00"], ["created_at", "2021-05-10 14:01:49.194788"], ["updated_at", "2021-05-10 14:01:49.194788"]]
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+[active_model_serializers] Rendered LessonSerializer with ActiveModelSerializers::Adapter::Attributes (0.59ms)
+Completed 200 OK in 16ms (Views: 3.6ms | ActiveRecord: 3.3ms | Allocations: 2776)
+
+
+Started GET "/api/v1/lessons" for ::1 at 2021-05-10 10:05:35 -0400
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (0.9ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.09ms)
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.9ms | Allocations: 1681)
+
+
+Started GET "/api/v1/lessons" for ::1 at 2021-05-10 10:05:46 -0400
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (0.3ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.29ms)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.3ms | Allocations: 1661)
+
+
+Started GET "/api/v1/lessons" for ::1 at 2021-05-10 10:06:02 -0400
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (0.2ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.34ms)
+Completed 200 OK in 4ms (Views: 4.0ms | ActiveRecord: 0.2ms | Allocations: 1679)
+
+
+Started GET "/api/v1/lessons" for ::1 at 2021-05-10 10:08:59 -0400
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (0.7ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (22.96ms)
+Completed 200 OK in 64ms (Views: 60.8ms | ActiveRecord: 0.7ms | Allocations: 1661)
+
+
+Started GET "/api/v1/lessons" for ::1 at 2021-05-10 10:09:03 -0400
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (0.2ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.68ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.2ms | Allocations: 1663)
+
+
+Started POST "/api/v1/lessons" for ::1 at 2021-05-10 10:09:17 -0400
+Processing by Api::V1::LessonsController#create as */*
+  Parameters: {"title"=>"New Lesson", "start"=>"2021-05-11T01:00:00.000Z", "end"=>"2021-05-11T02:20:00.000Z", "lesson"=>{"title"=>"New Lesson", "start"=>"2021-05-11T01:00:00.000Z", "end"=>"2021-05-11T02:20:00.000Z"}}
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+  [1m[36mLesson Create (11.6ms)[0m  [1m[32mINSERT INTO "lessons" ("title", "start", "end", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "New Lesson"], ["start", "2021-05-11 01:00:00"], ["end", "2021-05-11 02:20:00"], ["created_at", "2021-05-10 14:09:17.902825"], ["updated_at", "2021-05-10 14:09:17.902825"]]
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+  [1m[35m (9.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+[active_model_serializers] Rendered LessonSerializer with ActiveModelSerializers::Adapter::Attributes (0.75ms)
+Completed 200 OK in 46ms (Views: 2.2ms | ActiveRecord: 21.1ms | Allocations: 2784)
+
+
+Started POST "/api/v1/lessons" for ::1 at 2021-05-10 10:10:16 -0400
+Processing by Api::V1::LessonsController#create as */*
+  Parameters: {"title"=>"New Lesson 2", "start"=>"2021-05-10T11:00", "end"=>"2021-05-10T12:00", "lesson"=>{"title"=>"New Lesson 2", "start"=>"2021-05-10T11:00", "end"=>"2021-05-10T12:00"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+  [1m[36mLesson Create (1.4ms)[0m  [1m[32mINSERT INTO "lessons" ("title", "start", "end", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "New Lesson 2"], ["start", "2021-05-10 11:00:00"], ["end", "2021-05-10 12:00:00"], ["created_at", "2021-05-10 14:10:16.240201"], ["updated_at", "2021-05-10 14:10:16.240201"]]
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+[active_model_serializers] Rendered LessonSerializer with ActiveModelSerializers::Adapter::Attributes (0.98ms)
+Completed 200 OK in 17ms (Views: 4.7ms | ActiveRecord: 3.0ms | Allocations: 2776)
+
+
+Started GET "/api/v1/lessons" for ::1 at 2021-05-10 10:12:40 -0400
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (0.2ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.26ms)
+Completed 200 OK in 5ms (Views: 4.9ms | ActiveRecord: 0.2ms | Allocations: 2011)
+
+
+Started GET "/api/v1/lessons" for ::1 at 2021-05-10 10:16:37 -0400
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (0.2ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.81ms)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.2ms | Allocations: 2009)
+
+
+Started GET "/api/v1/lessons" for ::1 at 2021-05-10 10:16:43 -0400
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (0.3ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.33ms)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.3ms | Allocations: 2009)
+
+
+Started GET "/api/v1/lessons" for ::1 at 2021-05-10 10:19:06 -0400
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (0.2ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.86ms)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.2ms | Allocations: 2009)
+
+
+Started POST "/api/v1/lessons" for ::1 at 2021-05-10 10:19:31 -0400
+Processing by Api::V1::LessonsController#create as */*
+  Parameters: {"title"=>"Title ", "start"=>"2021-05-10T22:19", "end"=>"2021-05-10T23:19", "lesson"=>{"title"=>"Title ", "start"=>"2021-05-10T22:19", "end"=>"2021-05-10T23:19"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+  [1m[36mLesson Create (0.9ms)[0m  [1m[32mINSERT INTO "lessons" ("title", "start", "end", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Title "], ["start", "2021-05-10 22:19:00"], ["end", "2021-05-10 23:19:00"], ["created_at", "2021-05-10 14:19:31.891465"], ["updated_at", "2021-05-10 14:19:31.891465"]]
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+[active_model_serializers] Rendered LessonSerializer with ActiveModelSerializers::Adapter::Attributes (0.61ms)
+Completed 200 OK in 15ms (Views: 1.6ms | ActiveRecord: 3.2ms | Allocations: 2774)
+
+
+Started GET "/api/v1/lessons" for ::1 at 2021-05-10 10:21:22 -0400
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (0.2ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.22ms)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.2ms | Allocations: 2185)
+
+
+Started POST "/api/v1/lessons" for ::1 at 2021-05-10 10:21:53 -0400
+Processing by Api::V1::LessonsController#create as */*
+  Parameters: {"title"=>"Intro to Coding", "start"=>"2021-05-10T02:30", "end"=>"2021-05-10T05:21", "lesson"=>{"title"=>"Intro to Coding", "start"=>"2021-05-10T02:30", "end"=>"2021-05-10T05:21"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+  [1m[36mLesson Create (1.7ms)[0m  [1m[32mINSERT INTO "lessons" ("title", "start", "end", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Intro to Coding"], ["start", "2021-05-10 02:30:00"], ["end", "2021-05-10 05:21:00"], ["created_at", "2021-05-10 14:21:53.868922"], ["updated_at", "2021-05-10 14:21:53.868922"]]
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+[active_model_serializers] Rendered LessonSerializer with ActiveModelSerializers::Adapter::Attributes (0.95ms)
+Completed 200 OK in 17ms (Views: 2.4ms | ActiveRecord: 3.6ms | Allocations: 2774)
+
+
+Started GET "/api/v1/lessons" for ::1 at 2021-05-10 10:25:15 -0400
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (0.3ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.49ms)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.3ms | Allocations: 2359)
+
+
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "lessons"[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE TABLE "lessons" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "start" datetime, "end" datetime, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20210422231216)[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-05-10 14:26:01.621945"], ["updated_at", "2021-05-10 14:26:01.621945"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "cc7b66cfd0aee607f351750f150bf4bcf6bbfebe"], ["created_at", "2021-05-10 14:26:01.633826"], ["updated_at", "2021-05-10 14:26:01.633826"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "lessons"[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "lessons" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "start" datetime, "end" datetime, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20210422231216)[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-05-10 14:26:01.669344"], ["updated_at", "2021-05-10 14:26:01.669344"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.6ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2021-05-10 14:26:01.692078"], ["key", "environment"]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "cc7b66cfd0aee607f351750f150bf4bcf6bbfebe"], ["created_at", "2021-05-10 14:26:01.712864"], ["updated_at", "2021-05-10 14:26:01.712864"]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLesson Create (0.6ms)[0m  [1m[32mINSERT INTO "lessons" ("title", "start", "end", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Intro to Poetry - Rhyming"], ["start", "2021-04-19 08:00:00"], ["end", "2021-04-19 10:00:00"], ["created_at", "2021-05-10 14:26:01.775246"], ["updated_at", "2021-05-10 14:26:01.775246"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLesson Create (0.5ms)[0m  [1m[32mINSERT INTO "lessons" ("title", "start", "end", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Intro to Poetry - Alliteration"], ["start", "2021-04-19 12:00:00"], ["end", "2021-04-19 14:00:00"], ["created_at", "2021-05-10 14:26:01.782677"], ["updated_at", "2021-05-10 14:26:01.782677"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/api/v1/lessons" for ::1 at 2021-05-10 10:26:30 -0400
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (0.5ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.34ms)
+Completed 200 OK in 25ms (Views: 20.5ms | ActiveRecord: 1.6ms | Allocations: 7514)
+
+
+Started POST "/api/v1/lessons" for ::1 at 2021-05-10 10:27:09 -0400
+Processing by Api::V1::LessonsController#create as */*
+  Parameters: {"title"=>"Intro to Parenting ", "start"=>"2021-05-11T22:40:00.000Z", "end"=>"2021-05-12T00:00:00.000Z", "lesson"=>{"title"=>"Intro to Parenting ", "start"=>"2021-05-11T22:40:00.000Z", "end"=>"2021-05-12T00:00:00.000Z"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+  [1m[36mLesson Create (1.9ms)[0m  [1m[32mINSERT INTO "lessons" ("title", "start", "end", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Intro to Parenting "], ["start", "2021-05-11 22:40:00"], ["end", "2021-05-12 00:00:00"], ["created_at", "2021-05-10 14:27:09.449696"], ["updated_at", "2021-05-10 14:27:09.449696"]]
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+  [1m[35m (4.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+[active_model_serializers] Rendered LessonSerializer with ActiveModelSerializers::Adapter::Attributes (0.74ms)
+Completed 200 OK in 41ms (Views: 2.4ms | ActiveRecord: 6.0ms | Allocations: 3064)
+
+
+Started GET "/api/v1/lessons" for ::1 at 2021-05-10 10:34:32 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (0.4ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.87ms)
+Completed 200 OK in 11ms (Views: 8.8ms | ActiveRecord: 0.4ms | Allocations: 1518)
+
+
+Started POST "/api/v1/lessons" for ::1 at 2021-05-10 10:35:01 -0400
+Processing by Api::V1::LessonsController#create as */*
+  Parameters: {"title"=>"Another Title Again", "start"=>"2021-05-10T17:00:00.000Z", "end"=>"2021-05-10T18:00:00.000Z", "lesson"=>{"title"=>"Another Title Again", "start"=>"2021-05-10T17:00:00.000Z", "end"=>"2021-05-10T18:00:00.000Z"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+  [1m[36mLesson Create (1.6ms)[0m  [1m[32mINSERT INTO "lessons" ("title", "start", "end", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Another Title Again"], ["start", "2021-05-10 17:00:00"], ["end", "2021-05-10 18:00:00"], ["created_at", "2021-05-10 14:35:01.369820"], ["updated_at", "2021-05-10 14:35:01.369820"]]
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+[active_model_serializers] Rendered LessonSerializer with ActiveModelSerializers::Adapter::Attributes (0.68ms)
+Completed 200 OK in 19ms (Views: 2.0ms | ActiveRecord: 3.4ms | Allocations: 2799)
+
+
+Started POST "/api/v1/lessons" for ::1 at 2021-05-10 10:36:27 -0400
+Processing by Api::V1::LessonsController#create as */*
+  Parameters: {"title"=>"Time Fixed ", "start"=>"2021-05-11T04:00:00.000Z", "end"=>"2021-05-11T12:00:00.000Z", "lesson"=>{"title"=>"Time Fixed ", "start"=>"2021-05-11T04:00:00.000Z", "end"=>"2021-05-11T12:00:00.000Z"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+  [1m[36mLesson Create (1.2ms)[0m  [1m[32mINSERT INTO "lessons" ("title", "start", "end", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Time Fixed "], ["start", "2021-05-11 04:00:00"], ["end", "2021-05-11 12:00:00"], ["created_at", "2021-05-10 14:36:27.108717"], ["updated_at", "2021-05-10 14:36:27.108717"]]
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+[active_model_serializers] Rendered LessonSerializer with ActiveModelSerializers::Adapter::Attributes (0.9ms)
+Completed 200 OK in 15ms (Views: 2.2ms | ActiveRecord: 2.7ms | Allocations: 2799)
+
+
+Started POST "/api/v1/lessons" for ::1 at 2021-05-10 10:36:51 -0400
+Processing by Api::V1::LessonsController#create as */*
+  Parameters: {"title"=>"New Lesson Fixed", "start"=>"2021-05-11T12:20:00.000Z", "end"=>"2021-05-11T13:40:00.000Z", "lesson"=>{"title"=>"New Lesson Fixed", "start"=>"2021-05-11T12:20:00.000Z", "end"=>"2021-05-11T13:40:00.000Z"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+  [1m[36mLesson Create (1.0ms)[0m  [1m[32mINSERT INTO "lessons" ("title", "start", "end", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "New Lesson Fixed"], ["start", "2021-05-11 12:20:00"], ["end", "2021-05-11 13:40:00"], ["created_at", "2021-05-10 14:36:51.056399"], ["updated_at", "2021-05-10 14:36:51.056399"]]
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+[active_model_serializers] Rendered LessonSerializer with ActiveModelSerializers::Adapter::Attributes (1.04ms)
+Completed 200 OK in 15ms (Views: 3.2ms | ActiveRecord: 2.9ms | Allocations: 2784)
+
+
+Started POST "/api/v1/lessons" for ::1 at 2021-05-10 10:39:12 -0400
+Processing by Api::V1::LessonsController#create as */*
+  Parameters: {"title"=>"Love", "start"=>"2021-05-13T12:20:00.000Z", "end"=>"2021-05-13T13:20:00.000Z", "lesson"=>{"title"=>"Love", "start"=>"2021-05-13T12:20:00.000Z", "end"=>"2021-05-13T13:20:00.000Z"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+  [1m[36mLesson Create (1.0ms)[0m  [1m[32mINSERT INTO "lessons" ("title", "start", "end", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Love"], ["start", "2021-05-13 12:20:00"], ["end", "2021-05-13 13:20:00"], ["created_at", "2021-05-10 14:39:12.548991"], ["updated_at", "2021-05-10 14:39:12.548991"]]
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+  [1m[35m (3.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+[active_model_serializers] Rendered LessonSerializer with ActiveModelSerializers::Adapter::Attributes (0.65ms)
+Completed 200 OK in 17ms (Views: 1.8ms | ActiveRecord: 4.3ms | Allocations: 2782)
+
+
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "lessons"[0m
+  [1m[35m (4.9ms)[0m  [1m[35mCREATE TABLE "lessons" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "start" datetime, "end" datetime, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20210422231216)[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-05-10 14:39:32.864545"], ["updated_at", "2021-05-10 14:39:32.864545"]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "cc7b66cfd0aee607f351750f150bf4bcf6bbfebe"], ["created_at", "2021-05-10 14:39:32.872869"], ["updated_at", "2021-05-10 14:39:32.872869"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "lessons"[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "lessons" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "start" datetime, "end" datetime, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20210422231216)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-05-10 14:39:32.892181"], ["updated_at", "2021-05-10 14:39:32.892181"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.3ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2021-05-10 14:39:32.904748"], ["key", "environment"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "cc7b66cfd0aee607f351750f150bf4bcf6bbfebe"], ["created_at", "2021-05-10 14:39:32.917430"], ["updated_at", "2021-05-10 14:39:32.917430"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLesson Create (0.4ms)[0m  [1m[32mINSERT INTO "lessons" ("title", "start", "end", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Intro to Poetry - Rhyming"], ["start", "2021-04-19 08:00:00"], ["end", "2021-04-19 10:00:00"], ["created_at", "2021-05-10 14:39:32.955245"], ["updated_at", "2021-05-10 14:39:32.955245"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLesson Create (0.3ms)[0m  [1m[32mINSERT INTO "lessons" ("title", "start", "end", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Intro to Poetry - Alliteration"], ["start", "2021-04-19 12:00:00"], ["end", "2021-04-19 14:00:00"], ["created_at", "2021-05-10 14:39:32.959550"], ["updated_at", "2021-05-10 14:39:32.959550"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/api/v1/lessons" for ::1 at 2021-05-10 10:39:51 -0400
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (0.5ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.81ms)
+Completed 200 OK in 31ms (Views: 28.0ms | ActiveRecord: 1.0ms | Allocations: 7518)
+
+

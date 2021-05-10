@@ -5,14 +5,14 @@
 
 lesson = Lesson.create(
     title: 'Intro to Poetry - Rhyming', 
-    start: DateTime.new(2019,04,19,8,00),
-    end: DateTime.new(2019,04,19,10,00),
+    start: DateTime.new(2021,04,19,8,00),
+    end: DateTime.new(2021,04,19,10,00),
   
     
     )
 
  lesson_two = Lesson.create(
     title: 'Intro to Poetry - Alliteration',
-    start: DateTime.new(2019,04,19,12,00),
-    end: DateTime.new(2019,04,19,14,00),
+    start: DateTime.new(2021,04,19,12,00),
+    end: DateTime.new(2021,04,19,14,00),
 )
