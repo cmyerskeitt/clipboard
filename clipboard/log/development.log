@@ -29132,3 +29132,227 @@ Processing by Api::V1::LessonsController#index as */*
 Completed 200 OK in 31ms (Views: 28.0ms | ActiveRecord: 1.0ms | Allocations: 7518)
 
 
+Started GET "/api/v1/lessons" for ::1 at 2021-05-10 14:19:04 -0400
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (1.8ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (6.54ms)
+Completed 200 OK in 31ms (Views: 25.6ms | ActiveRecord: 1.8ms | Allocations: 1344)
+
+
+Started POST "/api/v1/lessons" for ::1 at 2021-05-10 14:20:43 -0400
+Processing by Api::V1::LessonsController#create as */*
+  Parameters: {"title"=>"Intro to Coding", "start"=>"2021-05-10T17:20:00.000Z", "end"=>"2021-05-10T18:20:00.000Z", "lesson"=>{"title"=>"Intro to Coding", "start"=>"2021-05-10T17:20:00.000Z", "end"=>"2021-05-10T18:20:00.000Z"}}
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+  [1m[36mLesson Create (1.4ms)[0m  [1m[32mINSERT INTO "lessons" ("title", "start", "end", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Intro to Coding"], ["start", "2021-05-10 17:20:00"], ["end", "2021-05-10 18:20:00"], ["created_at", "2021-05-10 18:20:43.460206"], ["updated_at", "2021-05-10 18:20:43.460206"]]
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+[active_model_serializers] Rendered LessonSerializer with ActiveModelSerializers::Adapter::Attributes (0.51ms)
+Completed 200 OK in 26ms (Views: 2.7ms | ActiveRecord: 3.9ms | Allocations: 3061)
+
+
+Started POST "/api/v1/lessons" for ::1 at 2021-05-10 14:22:13 -0400
+Processing by Api::V1::LessonsController#create as */*
+  Parameters: {"title"=>"New Lesson ", "start"=>"2021-05-10T12:00:00.000Z", "end"=>"2021-05-10T14:00:00.000Z", "lesson"=>{"title"=>"New Lesson ", "start"=>"2021-05-10T12:00:00.000Z", "end"=>"2021-05-10T14:00:00.000Z"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+  [1m[36mLesson Create (0.7ms)[0m  [1m[32mINSERT INTO "lessons" ("title", "start", "end", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "New Lesson "], ["start", "2021-05-10 12:00:00"], ["end", "2021-05-10 14:00:00"], ["created_at", "2021-05-10 18:22:13.688564"], ["updated_at", "2021-05-10 18:22:13.688564"]]
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+[active_model_serializers] Rendered LessonSerializer with ActiveModelSerializers::Adapter::Attributes (0.47ms)
+Completed 200 OK in 16ms (Views: 1.1ms | ActiveRecord: 3.4ms | Allocations: 2799)
+
+
+Started GET "/api/v1/lessons" for ::1 at 2021-05-10 14:52:04 -0400
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (1.4ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (148.61ms)
+Completed 200 OK in 184ms (Views: 176.0ms | ActiveRecord: 1.4ms | Allocations: 1694)
+
+
+Started GET "/api/v1/lessons" for ::1 at 2021-05-10 15:02:38 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (0.2ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.33ms)
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.2ms | Allocations: 1681)
+
+
+Started GET "/api/v1/lessons" for ::1 at 2021-05-10 15:04:14 -0400
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (0.9ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.45ms)
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.9ms | Allocations: 1661)
+
+
+Started GET "/api/v1/lessons" for ::1 at 2021-05-10 15:04:21 -0400
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (0.4ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.68ms)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.4ms | Allocations: 1663)
+
+
+Started GET "/api/v1/lessons" for ::1 at 2021-05-10 15:04:56 -0400
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (0.4ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.44ms)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.4ms | Allocations: 1663)
+
+
+Started GET "/api/v1/lessons" for ::1 at 2021-05-10 15:14:18 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (0.3ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.45ms)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.3ms | Allocations: 1681)
+
+
+Started GET "/api/v1/lessons" for ::1 at 2021-05-10 15:18:47 -0400
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (0.3ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.37ms)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.3ms | Allocations: 1661)
+
+
+Started GET "/api/v1/lessons" for ::1 at 2021-05-10 15:19:39 -0400
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (0.6ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.37ms)
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.6ms | Allocations: 1661)
+
+
+Started GET "/api/v1/lessons" for ::1 at 2021-05-10 15:20:46 -0400
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (0.2ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.43ms)
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.2ms | Allocations: 1661)
+
+
+Started GET "/api/v1/lessons" for ::1 at 2021-05-10 15:21:03 -0400
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (0.2ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.08ms)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.2ms | Allocations: 1661)
+
+
+Started GET "/api/v1/lessons" for ::1 at 2021-05-10 15:24:02 -0400
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (0.2ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.24ms)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.2ms | Allocations: 1661)
+
+
+Started GET "/api/v1/lessons" for ::1 at 2021-05-10 15:25:24 -0400
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (0.2ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.15ms)
+Completed 200 OK in 10ms (Views: 7.2ms | ActiveRecord: 0.2ms | Allocations: 1661)
+
+
+Started GET "/api/v1/lessons" for ::1 at 2021-05-10 15:27:58 -0400
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (0.2ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.62ms)
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.2ms | Allocations: 1661)
+
+
+Started GET "/api/v1/lessons" for ::1 at 2021-05-10 15:28:06 -0400
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (0.2ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (4.57ms)
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.2ms | Allocations: 1661)
+
+
+Started GET "/api/v1/lessons" for ::1 at 2021-05-10 15:28:50 -0400
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (0.2ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (7.02ms)
+Completed 200 OK in 11ms (Views: 10.7ms | ActiveRecord: 0.2ms | Allocations: 1661)
+
+
+Started GET "/api/v1/lessons" for ::1 at 2021-05-10 15:29:21 -0400
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (0.2ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.03ms)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.2ms | Allocations: 1662)
+
+
+Started GET "/api/v1/lessons" for ::1 at 2021-05-10 15:29:58 -0400
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (0.2ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.19ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.2ms | Allocations: 1661)
+
+
+Started GET "/api/v1/lessons" for ::1 at 2021-05-10 15:35:06 -0400
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (0.2ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.29ms)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.2ms | Allocations: 1661)
+
+
+Started GET "/api/v1/lessons" for ::1 at 2021-05-10 15:37:45 -0400
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (0.2ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.86ms)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.2ms | Allocations: 1661)
+
+
+Started GET "/api/v1/lessons" for ::1 at 2021-05-10 15:38:13 -0400
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (0.2ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.31ms)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.2ms | Allocations: 1661)
+
+
+Started GET "/api/v1/lessons" for ::1 at 2021-05-10 15:39:16 -0400
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (0.2ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.18ms)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.2ms | Allocations: 1661)
+
+
+Started GET "/api/v1/lessons" for ::1 at 2021-05-10 15:39:30 -0400
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (0.2ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.26ms)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.2ms | Allocations: 1661)
+
+
+Started GET "/api/v1/lessons" for ::1 at 2021-05-13 13:16:54 -0400
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (1.9ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (7.58ms)
+Completed 200 OK in 79ms (Views: 65.4ms | ActiveRecord: 4.0ms | Allocations: 7864)
+
+
