@@ -5,7 +5,6 @@ import LessonsList from '../Lessons/LessonsList'
 
 class LessonsContainer extends React.Component{
     render(){
-        // debugger
         return(
             <div>
                 <LessonInput />

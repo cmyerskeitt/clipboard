@@ -4,11 +4,6 @@ class CreateLessons < ActiveRecord::Migration[6.0]
       t.string :title
       t.datetime :start
       t.datetime :end
-      # t.string :subject
-      # t.text :objective
-      # t.text :summary
-      # t.string :lesson_url
- 
 
       t.timestamps
     end

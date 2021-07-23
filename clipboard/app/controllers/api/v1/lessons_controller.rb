@@ -7,12 +7,11 @@ class Api::V1::LessonsController < ApplicationController
     end 
 
     def create 
-        # binding.pry
 
         lesson = Lesson.create(lesson_params)
-        # binding.pry
+        
         if lesson.save
-            # binding.pry
+            
             render json: lesson
         else
             render json: {error: 'Error creating Lesson'}

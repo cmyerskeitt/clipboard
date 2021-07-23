@@ -29356,3 +29356,179 @@ Processing by Api::V1::LessonsController#index as */*
 Completed 200 OK in 79ms (Views: 65.4ms | ActiveRecord: 4.0ms | Allocations: 7864)
 
 
+Started GET "/api/v1/lessons" for ::1 at 2021-06-29 01:19:32 -0400
+  [1m[35m (6.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (0.9ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (4.63ms)
+Completed 200 OK in 112ms (Views: 98.1ms | ActiveRecord: 4.0ms | Allocations: 9185)
+
+
+Started POST "/api/v1/lessons" for ::1 at 2021-06-29 01:27:03 -0400
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::LessonsController#create as */*
+  Parameters: {"title"=>"Intro to Teaching ", "start"=>"2021-06-30T12:30:00.000Z", "end"=>"2021-06-30T14:30:00.000Z", "lesson"=>{"title"=>"Intro to Teaching ", "start"=>"2021-06-30T12:30:00.000Z", "end"=>"2021-06-30T14:30:00.000Z"}}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+  [1m[36mLesson Create (11.5ms)[0m  [1m[32mINSERT INTO "lessons" ("title", "start", "end", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Intro to Teaching "], ["start", "2021-06-30 12:30:00"], ["end", "2021-06-30 14:30:00"], ["created_at", "2021-06-29 05:27:03.961137"], ["updated_at", "2021-06-29 05:27:03.961137"]]
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+  [1m[35m (5.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+[active_model_serializers] Rendered LessonSerializer with ActiveModelSerializers::Adapter::Attributes (2.21ms)
+Completed 200 OK in 189ms (Views: 8.1ms | ActiveRecord: 17.1ms | Allocations: 3055)
+
+
+Started POST "/api/v1/lessons" for ::1 at 2021-06-29 01:29:43 -0400
+Processing by Api::V1::LessonsController#create as */*
+  Parameters: {"title"=>"Prep Time: Grade Lessons from Intro to Teaching ", "start"=>"2021-06-30T14:30:00.000Z", "end"=>"2021-06-30T16:00:00.000Z", "lesson"=>{"title"=>"Prep Time: Grade Lessons from Intro to Teaching ", "start"=>"2021-06-30T14:30:00.000Z", "end"=>"2021-06-30T16:00:00.000Z"}}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+  [1m[36mLesson Create (2.1ms)[0m  [1m[32mINSERT INTO "lessons" ("title", "start", "end", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Prep Time: Grade Lessons from Intro to Teaching "], ["start", "2021-06-30 14:30:00"], ["end", "2021-06-30 16:00:00"], ["created_at", "2021-06-29 05:29:44.002207"], ["updated_at", "2021-06-29 05:29:44.002207"]]
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+  [1m[35m (10.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+[active_model_serializers] Rendered LessonSerializer with ActiveModelSerializers::Adapter::Attributes (1.14ms)
+Completed 200 OK in 32ms (Views: 3.8ms | ActiveRecord: 12.7ms | Allocations: 2802)
+
+
+Started POST "/api/v1/lessons" for ::1 at 2021-06-29 01:30:36 -0400
+Processing by Api::V1::LessonsController#create as */*
+  Parameters: {"title"=>"Lunch", "start"=>"2021-06-30T16:20:00.000Z", "end"=>"2021-06-30T17:20:00.000Z", "lesson"=>{"title"=>"Lunch", "start"=>"2021-06-30T16:20:00.000Z", "end"=>"2021-06-30T17:20:00.000Z"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+  [1m[36mLesson Create (7.2ms)[0m  [1m[32mINSERT INTO "lessons" ("title", "start", "end", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Lunch"], ["start", "2021-06-30 16:20:00"], ["end", "2021-06-30 17:20:00"], ["created_at", "2021-06-29 05:30:36.565595"], ["updated_at", "2021-06-29 05:30:36.565595"]]
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+  [1m[35m (5.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:12:in `create'
+[active_model_serializers] Rendered LessonSerializer with ActiveModelSerializers::Adapter::Attributes (0.62ms)
+Completed 200 OK in 26ms (Views: 1.6ms | ActiveRecord: 12.7ms | Allocations: 2799)
+
+
+Started GET "/api/v1/lessons" for ::1 at 2021-07-22 21:35:44 -0400
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (0.8ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (6.7ms)
+Completed 200 OK in 68ms (Views: 62.1ms | ActiveRecord: 1.9ms | Allocations: 8388)
+
+
+Started POST "/api/v1/lessons" for ::1 at 2021-07-22 21:36:46 -0400
+Processing by Api::V1::LessonsController#create as */*
+  Parameters: {"title"=>nil, "start"=>"2021-06-30T04:00:00.000Z", "end"=>"2021-07-01T04:00:00.000Z", "lesson"=>{"title"=>nil, "start"=>"2021-06-30T04:00:00.000Z", "end"=>"2021-07-01T04:00:00.000Z"}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.23ms)
+Completed 200 OK in 70ms (Views: 15.9ms | ActiveRecord: 0.0ms | Allocations: 6421)
+
+
+Started GET "/api/v1/lessons" for ::1 at 2021-07-22 21:47:59 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (1.5ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (5.01ms)
+Completed 200 OK in 24ms (Views: 18.9ms | ActiveRecord: 1.5ms | Allocations: 2217)
+
+
+Started POST "/api/v1/lessons" for ::1 at 2021-07-22 21:54:51 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::LessonsController#create as */*
+  Parameters: {"title"=>"", "start"=>nil, "end"=>nil, "lesson"=>{"title"=>"", "start"=>nil, "end"=>nil}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.96ms)
+Completed 200 OK in 80ms (Views: 5.9ms | ActiveRecord: 0.0ms | Allocations: 1165)
+
+
+Started POST "/api/v1/lessons" for ::1 at 2021-07-22 21:54:56 -0400
+Processing by Api::V1::LessonsController#create as */*
+  Parameters: {"title"=>"", "start"=>nil, "end"=>nil, "lesson"=>{"title"=>"", "start"=>nil, "end"=>nil}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 200 OK in 6ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 1165)
+
+
+Started POST "/api/v1/lessons" for ::1 at 2021-07-22 21:54:56 -0400
+Processing by Api::V1::LessonsController#create as */*
+  Parameters: {"title"=>"", "start"=>nil, "end"=>nil, "lesson"=>{"title"=>"", "start"=>nil, "end"=>nil}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 200 OK in 6ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 1156)
+
+
+Started POST "/api/v1/lessons" for ::1 at 2021-07-22 21:54:57 -0400
+Processing by Api::V1::LessonsController#create as */*
+  Parameters: {"title"=>"", "start"=>nil, "end"=>nil, "lesson"=>{"title"=>"", "start"=>nil, "end"=>nil}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 200 OK in 6ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 1154)
+
+
+Started POST "/api/v1/lessons" for ::1 at 2021-07-22 21:54:57 -0400
+Processing by Api::V1::LessonsController#create as */*
+  Parameters: {"title"=>"", "start"=>nil, "end"=>nil, "lesson"=>{"title"=>"", "start"=>nil, "end"=>nil}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 1157)
+
+
+Started POST "/api/v1/lessons" for ::1 at 2021-07-22 21:54:57 -0400
+Processing by Api::V1::LessonsController#create as */*
+  Parameters: {"title"=>"", "start"=>nil, "end"=>nil, "lesson"=>{"title"=>"", "start"=>nil, "end"=>nil}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 200 OK in 5ms (Views: 0.7ms | ActiveRecord: 0.0ms | Allocations: 1154)
+
+
+Started POST "/api/v1/lessons" for ::1 at 2021-07-22 21:54:57 -0400
+Processing by Api::V1::LessonsController#create as */*
+  Parameters: {"title"=>"", "start"=>nil, "end"=>nil, "lesson"=>{"title"=>"", "start"=>nil, "end"=>nil}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 1154)
+
+
+Started POST "/api/v1/lessons" for ::1 at 2021-07-22 21:54:58 -0400
+Processing by Api::V1::LessonsController#create as */*
+  Parameters: {"title"=>"", "start"=>nil, "end"=>nil, "lesson"=>{"title"=>"", "start"=>nil, "end"=>nil}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 200 OK in 5ms (Views: 0.7ms | ActiveRecord: 0.0ms | Allocations: 1154)
+
+
+Started POST "/api/v1/lessons" for ::1 at 2021-07-22 21:54:58 -0400
+Processing by Api::V1::LessonsController#create as */*
+  Parameters: {"title"=>"", "start"=>nil, "end"=>nil, "lesson"=>{"title"=>"", "start"=>nil, "end"=>nil}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 1154)
+
+
+Started GET "/api/v1/lessons" for ::1 at 2021-07-22 21:57:31 -0400
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (1.0ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (11.6ms)
+Completed 200 OK in 33ms (Views: 27.2ms | ActiveRecord: 1.0ms | Allocations: 2207)
+
+
+Started POST "/api/v1/lessons" for ::1 at 2021-07-22 21:57:42 -0400
+Processing by Api::V1::LessonsController#create as */*
+  Parameters: {"title"=>"", "start"=>nil, "end"=>nil, "lesson"=>{"title"=>"", "start"=>nil, "end"=>nil}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.2ms)
+Completed 200 OK in 12ms (Views: 0.8ms | ActiveRecord: 0.0ms | Allocations: 1154)
+
+
+Started GET "/api/v1/lessons" for ::1 at 2021-07-22 21:57:49 -0400
+Processing by Api::V1::LessonsController#index as */*
+  [1m[36mLesson Load (0.2ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons"[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (5.26ms)
+Completed 200 OK in 10ms (Views: 9.9ms | ActiveRecord: 0.2ms | Allocations: 2187)
+
+
+Started POST "/api/v1/lessons" for ::1 at 2021-07-22 22:00:27 -0400
+Processing by Api::V1::LessonsController#create as */*
+  Parameters: {"title"=>"skjfn;akjgn;", "start"=>"2021-07-23T02:00:00.000Z", "end"=>"2021-07-23T03:00:00.000Z", "lesson"=>{"title"=>"skjfn;akjgn;", "start"=>"2021-07-23T02:00:00.000Z", "end"=>"2021-07-23T03:00:00.000Z"}}
+  [1m[35m (3.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:11:in `create'
+  [1m[36mLesson Create (9.9ms)[0m  [1m[32mINSERT INTO "lessons" ("title", "start", "end", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "skjfn;akjgn;"], ["start", "2021-07-23 02:00:00"], ["end", "2021-07-23 03:00:00"], ["created_at", "2021-07-23 02:00:27.541873"], ["updated_at", "2021-07-23 02:00:27.541873"]]
+  ↳ app/controllers/api/v1/lessons_controller.rb:11:in `create'
+  [1m[35m (4.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/lessons_controller.rb:11:in `create'
+[active_model_serializers] Rendered LessonSerializer with ActiveModelSerializers::Adapter::Attributes (3.03ms)
+Completed 200 OK in 120ms (Views: 5.4ms | ActiveRecord: 17.1ms | Allocations: 2884)
+
+

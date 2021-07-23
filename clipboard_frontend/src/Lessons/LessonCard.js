@@ -5,7 +5,6 @@ import React from 'react'
 const LessonCard = props => {
 
     return(
-        // debugger 
         <div className="lesson-card" >
             <h5>
                 {props.lesson.title}
