@@ -2,24 +2,10 @@ import homeImage from './homeImage.jpg'
 import './home.css'
 import React from 'react'
 
-class HomeContainer extends React.Component{
-    constructor(){
-        super()
-        this.state = {
-            black: true 
-        }
-    }
-
-    // changeColor=()=>{
-    //     this.setState({
-    //        black: !this.state.black
-    //     })
-    // }
-  
-    render(){
-        let changingClass = this.state.black ? 'background-black' : 'background-white'
+const HomeContainer = () => {
+   
     return (
-        <div className={changingClass} >
+        <div>
             <center>
             <h2>Welcome to Clipboard!</h2>
             <p>
@@ -31,11 +17,10 @@ class HomeContainer extends React.Component{
                 Photo source: <a href="https://images.unsplash.com/photo-1618514951866-efc95de03f37?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzB8fGNsaXBib2FyZHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60">Luba Ertel</a>
 
             </small> <br></br>
-            {/* <button onClick={this.changeColor} > Change color </button> */}
             </center>
         </div>
     )
   }
-}
+
 
 export default HomeContainer 

@@ -1,6 +1,6 @@
 
-export default function lessonReducer(state = {lessons: [], loading: false}, action){
-    console.log(action.payload)
+export default function lessonReducer(state = {lessons: []}, action){
+    // console.log(action.payload)
    switch (action.type){
      case 'FETCH_LESSONS':
          const l = action.lessons.map(function(a){

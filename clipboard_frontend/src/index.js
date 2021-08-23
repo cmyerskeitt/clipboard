@@ -8,8 +8,6 @@ import lessonReducer from './reducers/lessonReducer'
 import { composeWithDevTools } from 'redux-devtools-extension'
 
 
-
-
 const store = createStore(lessonReducer, composeWithDevTools(applyMiddleware(thunk)))
 
 ReactDOM.render(
