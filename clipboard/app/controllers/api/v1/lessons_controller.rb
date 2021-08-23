@@ -22,8 +22,6 @@ class Api::V1::LessonsController < ApplicationController
         lesson = lessons.find(params[:id])
         if lesson 
             lesson.to_formatted_s(:rfc822)
-          
-        #  Lesson.find(params[:id])
             render json: lesson
         else
             redirect_to api_v1_lessons_path if !lesson
@@ -38,8 +36,6 @@ class Api::V1::LessonsController < ApplicationController
 
     
     private
-
-
     def lesson_params
         params.require(:lesson).permit(:title, :start, :end, :id)
        

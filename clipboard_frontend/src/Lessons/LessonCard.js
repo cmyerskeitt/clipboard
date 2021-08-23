@@ -12,7 +12,6 @@ const LessonCard = props => {
             Start Time: {props.lesson.start.toString()}<br></br>
             <br></br>
             End Time: {props.lesson.end.toString()}
-            {/* <button onClick={() => this.handleOnClick()}>X</button> */}
         </div>
 
     )
