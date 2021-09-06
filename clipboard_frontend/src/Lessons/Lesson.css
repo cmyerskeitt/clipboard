@@ -5,6 +5,9 @@
     padding: 15px;
     width: 350px;
     margin: 10px 0 5px 0;
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+    break-inside: avoid;
 }
 
 .lesson-card h5 {
@@ -12,9 +15,9 @@
     background: white;
     padding: 1em;
     margin-bottom: 1.3em;
-    -webkit-column-break-inside: avoid;
+    /* -webkit-column-break-inside: avoid;
     page-break-inside: avoid;
-    break-inside: avoid;
+    break-inside: avoid; */
 }
 
 ul {
