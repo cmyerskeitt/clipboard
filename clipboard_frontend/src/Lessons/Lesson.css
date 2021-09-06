@@ -9,6 +9,12 @@
 
 .lesson-card h5 {
     text-align: center;
+    background: white;
+    padding: 1em;
+    margin-bottom: 1.3em;
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+    break-inside: avoid;
 }
 
 ul {
@@ -17,6 +23,7 @@ ul {
     column-gap: 80px ;
     align-content: center;
 }
+
 
 
 input {
