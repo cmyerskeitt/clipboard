@@ -46,10 +46,10 @@ class LessonInput extends React.Component {
                     <label> Title: </label>
                     <input type="text" value={this.state.title} name="title" onChange={this.handleOnChange}/><br></br>
                     <br></br>
-                    <label> Start: </label>
+                    <label>  Start: </label>
                     <input type="datetime-local" value={this.state.start}  name="start" onChange={this.handleOnChange}/><br></br>
                     <br></br>
-                    <label> End: </label>
+                    <label>  End: </label>
                     <input type="datetime-local" value={this.state.end} name="end" onChange={this.handleOnChange}/><br></br>
                     <br></br>
                     <br></br>
